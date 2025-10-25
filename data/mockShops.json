@@ -1,0 +1,139 @@
+[
+  {
+    "id": 1,
+    "name": "Warung Bakso Pak Kumis",
+    "category": "Kuliner",
+    "description": "Bakso daging sapi asli dengan kuah gurih dan mie kenyal. Sudah berdiri sejak 1995 dan menjadi favorit warga sekitar. Porsi jumbo dengan harga terjangkau!",
+    "address": "Jl. Merdeka No. 45",
+    "region": "Jakarta",
+    "phone": "0812-3456-7890",
+    "image": "https://images.unsplash.com/photo-1551033996-9cfddb3ffb1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJlZXQlMjBmb29kJTIwdmVuZG9yfGVufDF8fHx8MTc2MTIxMDY4NXww&ixlib=rb-4.1.0&q=80&w=1080",
+    "website": "https://wabakso.com",
+    "promo": true,
+    "Rating": 4.9,
+    "isNew": true,
+    "gallery": [
+      "https://images.unsplash.com/photo-1551033996-9cfddb3ffb1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJlZXQlMjBmb29kJTIwdmVuZG9yfGVufDF8fHx8MTc2MTIxMDY4NXww&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1743485753941-5d515a62628d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwY291cnQlMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NjEyMzc0Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1555369870-9e6da9929585?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsb2NhbCUyMG1hcmtldCUyMGlsbHVzdHJhdGlvbnxlbnwxfHx8fDE3NjEyMzc0Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    ]
+  },
+  {
+    "id": 2,
+    "name": "Kedai Kopi Nusantara",
+    "category": "Kuliner",
+    "description": "Kedai kopi lokal dengan biji kopi pilihan dari berbagai daerah di Indonesia. Suasana cozy dengan WiFi gratis, cocok untuk meeting atau ngerjain tugas.",
+    "address": "Jl. Diponegoro No. 12",
+    "region": "Bandung",
+    "phone": "0813-5678-9012",
+    "image": "https://images.unsplash.com/photo-1635051296005-51184754615f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBzaG9wJTIwbG9jYWx8ZW58MXx8fHwxNzYxMjMzOTYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "promo": false,
+    "Rating": 4.7,
+    "isNew": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1635051296005-51184754615f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxjb2ZmZWUlMjBzaG9wJTIwbG9jYWx8ZW58MXx8fHwxNjEyMzM5NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1555369870-9e6da9929585?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsb2NhbCUyMG1hcmtldCUyMGlsbHVzdHJhdGlvbnxlbnwxfHx8fDE3NjEyMzc0Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    ]
+  },
+  {
+    "id": 3,
+    "name": "Barbershop The Gentlemen",
+    "category": "Jasa",
+    "description": "Barbershop modern dengan pelayanan profesional. Spesialis cukur rambut pria, styling, dan grooming. Dikerjakan oleh barber berpengalaman.",
+    "address": "Jl. Raya Ciwidey KM 8",
+    "region": "Bandung",
+    "phone": "0857-1234-5678",
+    "image": "https://images.unsplash.com/photo-1667539916609-c706d5b7ed65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXJiZXIlMjBzaG9wJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzYxMTM5MzgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "website": "https://gentlemenbarbershop.com",
+    "promo": true,
+    "Rating": 4.5,
+    "isNew": true,
+    "gallery": [
+      "https://images.unsplash.com/photo-1667539916609-c706d5b7ed65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXJiZXIlMjBzaG9wJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzYxMTM5MzgyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+    ]
+  },
+  {
+    "id": 4,
+    "name": "Toko Kue Manis Bahagia",
+    "category": "Kuliner",
+    "description": "Toko kue dan bakery artisan dengan resep keluarga turun temurun. Spesial kue ulang tahun custom, kue kering, dan roti premium. Bisa delivery dan COD.",
+    "address": "Jl. Sudirman No. 88",
+    "region": "Yogyakarta",
+    "phone": "0821-9876-5432",
+    "image": "https://images.unsplash.com/photo-1728651028766-4ae2bfb49e56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWtlJTIwc2hvcCUyMGRpc3BsYXl8ZW58MXx8fHwxNzYxMjM3NDI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "promo": false,
+    "Rating": 4.4,
+    "isNew": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1728651028766-4ae2bfb49e56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWtlJTIwc2hvcCUyMGRpc3BsYXl8ZW58MXx8fHwxNzYxMjM3NDI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
+      "https://images.unsplash.com/photo-1644015272264-2d70518c2046?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYWtlcnklMjBzdG9yZXxlbnwxfHx8fDE3NjEyMzM5NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    ]
+  },
+  {
+    "id": 5,
+    "name": "Warung Makan Sederhana",
+    "category": "Kuliner",
+    "description": "Warung makan tradisional dengan menu nusantara yang lezat dan harga terjangkau. Spesial nasi goreng kampung, soto ayam, dan rawon.",
+    "address": "Jl. Gatot Subroto No. 22",
+    "region": "Surabaya",
+    "phone": "0856-2345-6789",
+    "image": "https://images.unsplash.com/photo-1758767055264-bc7e859811d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsb2NhbCUyMGZvb2QlMjBzdGFsbHxlbnwxfHx8fDE3NjEyMzM5NjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "website": "https://warungsederhana.com",
+    "isNew": true,
+    "Rating": 4.7,
+    "promo": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1758767055264-bc7e859811d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxsb2NhbCUyMGZvb2QlMjBzdGFsbHxlbnwxfHx8fDE3NjEyMzM5NjF8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    ]
+  },
+  {
+    "id": 6,
+    "name": "Minimarket Berkah Jaya",
+    "category": "Retail",
+    "description": "Minimarket dengan lengkap kebutuhan sehari-hari. Harga bersaing, produk fresh, dan pelayanan ramah. Buka 24 jam untuk kemudahan Anda.",
+    "address": "Jl. Ahmad Yani No. 67",
+    "region": "Jakarta Pusat",
+    "phone": "0811-7654-3210",
+    "image": "https://images.unsplash.com/photo-1635059488890-558b1eb1f289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm9jZXJ5JTIwc3RvcmUlMjBsb2NhbHxlbnwxfHx8fDE3NjEyMzc0Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "Rating": 4.6,
+    "isNew": true,
+    "promo": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1635059488890-558b1eb1f289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxncm9jZXJ5JTIwc3RvcmUlMjBsb2NhbHxlbnwxfHx8fDE3NjEyMzc0Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    ]
+  },
+  {
+    "id": 7,
+    "name": "Laundry Kilat Express",
+    "category": "Jasa",
+    "description": "Layanan laundry cepat dan berkualitas dengan sistem antar jemput gratis. Tersedia layanan kilat 24 jam untuk kebutuhan mendesak. Harga mulai Rp 5.000/kg.",
+    "address": "Jl. Veteran No. 34",
+    "region": "Semarang",
+    "phone": "0822-3456-7890",
+    "image": "https://images.unsplash.com/photo-1651449815993-706eaa7a936a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFsbCUyMGJ1c2luZXNzJTIwc2hvcHxlbnwxfHx8fDE3NjEyMzM5NjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
+    "website": "https://laundrykilat.com",
+    "Rating": 4.4,
+    "promo": true,
+    "isNew": false,
+    "gallery": [
+      "https://images.unsplash.com/photo-1651449815993-706eaa7a936a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxzbWFsbCUyMGJ1c2luZXNzJTIwc2hvcHxlbnwxfHx8fDE3NjEyMzM5NjB8MA&ixlib=rb-4.1.0&q=80&w=1080"
+    ]
+  },
+  {
+    "id": 8,
+    "name": "Fashion Store Trendy",
+    "category": "Fashion",
+    "description": "Butik fashion dengan koleksi pakaian wanita dan pria terkini. Tersedia juga layanan custom jahit untuk acara spesial seperti pernikahan dan wisuda.",
+    "address": "Jl. Pemuda No. 56",
+    "region": "Surabaya",
+    "phone": "0823-8765-4321",
+    "image": "https://images.unsplash.com/photo-1570857502809-08184874388e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwYm91dGlxdWV8ZW58MXx8fHwxNzYxMTQ2Mjk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
+    "isPopular": true,
+    "Rating": 4.6,
+    "isNew": false,
+    "promo": true,
+    "gallery": [
+      "https://images.unsplash.com/photo-1570857502809-08184874388e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxmYXNoaW9uJTIwYm91dGlxdWV8ZW58MXx8fHwxNzYxMTQ2Mjk5fDA&ixlib=rb-4.1.0&q=80&w=1080"
+    ]
+  }
+]
