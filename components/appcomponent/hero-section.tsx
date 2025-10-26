@@ -2,8 +2,17 @@
 
 import { Search } from "lucide-react"
 import { useState } from "react"
-import { Button } from "@/components/ui/button" // Menggunakan shadcn/ui Button
-import { Input } from "@/components/ui/input"   // Menggunakan shadcn/ui Input
+import { Button } from "@/components/ui/button"
+import { Input } from "@/components/ui/input"
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectLabel,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select"
 
 interface HeroSectionProps {
   onSearch: (query: string) => void
@@ -11,8 +20,23 @@ interface HeroSectionProps {
 }
 
 const categories = [
-  "Makanan & Minuman",
-  "Fashion & Aksesoris",
+  {value: "Semua", label: "Semua"},
+  {value: "kuliner", label: "Kuliner"},
+  {value: "retail", label: "Retail"},
+  {value: "jasa", label: "Jasa"},
+  {value: "fashion", label: "Fashion"},
+  {value: "elektronik", label: "Elektronik"},
+  {value: "rumah tangga", label: "Rumah Tangga"},
+  {value: "kerajinan", label: "Kerajinan"},
+  {value: "lainnya", label: "Lainnya"},
+]
+
+const locations = [
+  {value: "Semua", label: "Semua"},
+  {value: "bojongsoang", label: "Bojongsoang"},
+  {value: "buahbatu", label: "Buahbatu"},
+  {value: "dayeuhkolot", label: "Dayeuhkolot"},
+  {value: "batununggal", label: "Batununggal"},,
 ]
 
 export function HeroSection({ onSearch, onFilter }: HeroSectionProps) {
@@ -29,14 +53,14 @@ export function HeroSection({ onSearch, onFilter }: HeroSectionProps) {
   }
 
   return (
-    <section className="bg-linear-to-br from-cyan-200 via-background to-orange-200 py-16 lg:py-38 w-full shadow-lg">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="bg-linear-to-br from-cyan-200 via-background to-orange-200 py-12 lg:py-16 w-full shadow-lg">
+      <div className="flex flex-row flex-wrap justify-between max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
         {/* Heading */}
-        <div className="text-center mb-14">
-          <h1 className="text-4xl md:text-5xl font-bold text-text mb-12 text-balance">
-            Temukan UMKM Terbaik di Sekitarmu
+        <div className="text-left mb-14">
+          <h1 className="text-4xl md:text-5xl font-bold mb-12">
+            Temukan UMKM
           </h1>
-          <p className="text-lg text-text-light max-w-2xl mx-auto">
+          <p className="text-lg text-text-light max-w-lg mx-auto">
             Dukung bisnis lokal dan temukan produk berkualitas dari pengusaha di komunitas Anda
           </p>
         </div>
@@ -65,37 +89,49 @@ export function HeroSection({ onSearch, onFilter }: HeroSectionProps) {
 
           {/* Filters */}
           <div className="flex flex-col sm:flex-row gap-3">
-            <select
+            <Select
               value={selectedType}
-              onChange={(e) => {
-                setSelectedType(e.target.value)
-                handleFilter()
+              onValueChange={(value) => {
+                setSelectedType(value)
+                onFilter(value, selectedLocation)
               }}
-              className="flex-1 px-4 py-3 rounded-lg border border-border bg-white text-text focus:outline-none focus:ring-2 focus:ring-primary"
             >
-              <option value="">Semua</option>
-              <option value="makanan">Kuliner</option>
-              <option value="fashion">Fashion</option>
-              <option value="kerajinan">Kerajinan Tangan</option>
-              <option value="jasa">Jasa & Layanan</option>
-              <option value="elektronik">Elektronik & Gadget</option>
-            </select>
+              <SelectTrigger className="flex-1 px-4 py-3 rounded-lg border border-border bg-white text-text focus:outline-none focus:ring-2 focus:ring-primary">
+                <SelectValue placeholder="Select a category" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Categories</SelectLabel>
+                  {categories.map((category) => (
+                    <SelectItem key={category.label} value={category.value}>
+                      {category.label}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
 
-            <select
+            <Select
               value={selectedLocation}
-              onChange={(e) => {
-                setSelectedLocation(e.target.value)
-                handleFilter()
+              onValueChange={(value) => {
+                setSelectedLocation(value)
+                onFilter(selectedType, value)
               }}
-              className="flex-1 px-4 py-3 rounded-lg border border-border bg-white text-text focus:outline-none focus:ring-2 focus:ring-primary"
             >
-              <option value="">Semua Lokasi</option>
-              <option value="jakarta">Bojongsoang</option>
-              <option value="bandung">Bandung</option>
-              <option value="surabaya">Surabaya</option>
-              <option value="medan">Medan</option>
-              <option value="yogyakarta">Yogyakarta</option>
-            </select>
+              <SelectTrigger className="flex-1 px-4 py-3 rounded-lg border border-border bg-white text-text focus:outline-none focus:ring-2 focus:ring-primary">
+                <SelectValue placeholder="Select a location" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                    <SelectLabel>Locations</SelectLabel>
+                    {locations.map((locations) => (
+                      <SelectItem key={locations?.label} value={locations?.value}>
+                        {locations?.label}
+                      </SelectItem>
+                    ))}
+                  </SelectGroup>
+              </SelectContent>
+            </Select>
           </div>
         </div>
       </div>

@@ -17,35 +17,37 @@ interface UMKM {
   gallery?: string[]
 }
 
-export function UMKMCard({ id, name, category, address, image, promo }: UMKM) {
+export function UMKMCard({ id, name, category, region, image }: UMKM) {
   return (
     <Link href={`/umkm/${id}`}>
-      <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer h-full">
+      <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer h-full max-w-72">
         {/* Image Container */}
-        <div className="relative h-48 bg-gray-200 overflow-hidden">
-          <img src={image || "/placeholder.svg"} alt={name} className="w-full h-full object-cover" />
-          {promo && (
-            <div className="absolute top-3 right-3 bg-accent text-white px-3 py-1 rounded-full text-sm font-bold">
-              {promo && "Promo"}
-            </div>
-          )}
+        <div className="relative h-36 sm:h-40 md:h-44 lg:h-48 bg-gray-200 overflow-hidden">
+          <img
+            src={image || "/placeholder.svg"}
+            alt={name}
+            className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
+          />
         </div>
 
         {/* Content */}
-        <div className="p-4">
-          <h3 className="font-bold text-lg text-text mb-2 line-clamp-2">{name}</h3>
+        <div className="p-3 sm:p-4">
+          {/* Nama UMKM */}
+          <h3 className="font-semibold sm:font-bold text-base sm:text-lg text-gray-900 line-clamp-2 mb-2">
+            {name}
+          </h3>
 
-          {/* Type Badge */}
-          <div className="flex items-center gap-2 mb-3">
-            <span className="inline-block bg-primary-light text-primary px-3 py-1 rounded-full text-xs font-semibold">
+          {/* Kategori */}
+          <div className="flex items-center gap-2 mb-2">
+            <span className="inline-block bg-blue-100 text-blue-700 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-medium">
               {category}
             </span>
           </div>
 
-          {/* Location */}
-          <div className="flex items-center gap-2 text-text-light text-sm">
-            <MapPin size={16} className="text-primary shrink-0" />
-            <span className="line-clamp-1">{address}</span>
+          {/* Lokasi */}
+          <div className="flex items-center gap-1.5 sm:gap-2 text-gray-500 text-xs sm:text-sm">
+            <MapPin size={14} className="text-blue-500 shrink-0" />
+            <span className="line-clamp-1">{region}</span>
           </div>
         </div>
       </div>
