@@ -66,54 +66,57 @@ export function FilterSections() {
   }, [searchQuery, selectedCategory, selectedLocation, isNew, isPromo]);
 
   return (
-    <section className="w-full px-4 md:px-10 space-y-6">
+    <section className="w-full px-4 space-y-4">
       {/* Search & Filter Bar */}
-      <div className="flex flex-wrap gap-4 justify-center md:justify-start items-center">
+      <div className="flex flex-col gap-4 items-center">
         {/* Search Bar */}
-        <div className="relative w-full md:w-1/3">
-          <Input
-            type="text"
-            placeholder="Cari UMKM..."
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className="pl-10"
-          />
-          <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+        <div className="flex flex-row gap-3 justify-start items-center">
+            <div className="relative w-full sm:w-1/3 md:w-120">
+            <Input
+              type="text"
+              placeholder="Search"
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className="pl-12 bg-white border-gray-300 focus:border-orange-500 focus:ring-orange-500 rounded-2xl"
+            />
+            <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
+          </div>
+
+          {/* Select Lokasi */}
+          <Select onValueChange={setSelectedLocation}>
+            <SelectTrigger className="w-60 bg-white rounded-2xl">
+              <SelectValue placeholder="Lokasi" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Lokasi</SelectLabel>
+                {locations.map((loc) => (
+                  <SelectItem key={loc.value} value={loc.value}>
+                    {loc.label}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
+
+          {/* Select Kategori */}
+          <Select onValueChange={setSelectedCategory}>
+            <SelectTrigger className="w-60 bg-white rounded-2xl">
+              <SelectValue placeholder="Kategori" />
+            </SelectTrigger>
+            <SelectContent>
+              <SelectGroup>
+                <SelectLabel>Kategori</SelectLabel>
+                {categories.map((cat) => (
+                  <SelectItem key={cat.value} value={cat.value}>
+                    {cat.label}
+                  </SelectItem>
+                ))}
+              </SelectGroup>
+            </SelectContent>
+          </Select>
         </div>
-
-        {/* Select Lokasi */}
-        <Select onValueChange={setSelectedLocation}>
-          <SelectTrigger className="w-40">
-            <SelectValue placeholder="Lokasi" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectLabel>Lokasi</SelectLabel>
-              {locations.map((loc) => (
-                <SelectItem key={loc.value} value={loc.value}>
-                  {loc.label}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
-
-        {/* Select Kategori */}
-        <Select onValueChange={setSelectedCategory}>
-          <SelectTrigger className="w-40">
-            <SelectValue placeholder="Kategori" />
-          </SelectTrigger>
-          <SelectContent>
-            <SelectGroup>
-              <SelectLabel>Kategori</SelectLabel>
-              {categories.map((cat) => (
-                <SelectItem key={cat.value} value={cat.value}>
-                  {cat.label}
-                </SelectItem>
-              ))}
-            </SelectGroup>
-          </SelectContent>
-        </Select>
+        
 
         {/* Tombol Filter */}
         <div className="flex gap-3">
