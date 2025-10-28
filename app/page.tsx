@@ -8,13 +8,13 @@ export default function App() {
     <div className="min-h-screen bg-[#F9F5F0]">
       {/* Header */}
       <Header />
-      <main className="flex flex-col items-center">
+      <main className="flex flex-col">
         {/* Hero Section */}
-      <div id="banner" className="flex">
+      <div id="banner" className="flex pb-10 pt-8 px-10 w-full">
         <BannerCarousel />
       </div>
 
-      <div id="kategori" className="flex mt-3 w-8xl">
+      <div id="kategori" className="flex mt-3">
         <FilterSections />
       </div>
 

@@ -5,32 +5,10 @@ import { Footer } from "@/components/appcomponent/footer"
 import { ImageCarousel } from "@/components/appcomponent/image-carousel"
 import { ShopGrid } from "@/components/appcomponent/shop-grid"
 import { MapPin, Phone, Clock, Star } from "lucide-react"
+import { UMKM } from "@/lib/UMKMs"
 import Link from "next/link"
 import mockumkms from "@/data/mockShops.json"
 
-interface UMKM {
-  id: number
-  name: string
-  category: string
-  description: string
-  coordinates: {
-    lat: number
-    lng: number
-  }
-  rating: number
-  reviews: number
-  hours: string
-  whatsapp: string
-  address: string
-  region: string
-  phone: string
-  image: string
-  website?: string
-  promo?: boolean
-  isNew?: boolean
-  isPopular?: boolean
-  gallery: string[]
-}
 
 export default function UMKMDetailPage( selectedUMKM: UMKM) {
   return (
@@ -54,8 +32,8 @@ export default function UMKMDetailPage( selectedUMKM: UMKM) {
                 </span>
                 <div className="flex items-center gap-1">
                   <Star size={18} className="text-accent fill-accent" />
-                  <span className="font-bold">{selectedUMKM.rating}</span>
-                  <span className="text-text-light">({selectedUMKM.reviews} ulasan)</span>
+                  <span className="font-bold">{selectedUMKM.Rating}</span>
+                  {/* <span className="text-text-light">({selectedUMKM.reviews} ulasan)</span> */}
                 </div>
               </div>
             </div>
@@ -132,7 +110,7 @@ export default function UMKMDetailPage( selectedUMKM: UMKM) {
                 </a>
 
                 {/* Visit Location */}
-                <a
+                {/* <a
                   href={`https://maps.google.com/?q=${selectedUMKM.coordinates.lat},${selectedUMKM.coordinates.lng}`}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -140,7 +118,7 @@ export default function UMKMDetailPage( selectedUMKM: UMKM) {
                 >
                   <MapPin size={20} />
                   Kunjungi Lokasi
-                </a>
+                </a> */}
               </div>
             </div>
 

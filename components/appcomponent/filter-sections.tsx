@@ -1,8 +1,9 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
+import { useUMKMStore } from "@/lib/UMKMs";
 import {
   Select,
   SelectContent,
@@ -34,99 +35,91 @@ const locations = [
 ];
 
 export function FilterSections() {
-  const [searchQuery, setSearchQuery] = useState("");
-  const [selectedCategory, setSelectedCategory] = useState("");
-  const [selectedLocation, setSelectedLocation] = useState("");
-  const [isNew, setIsNew] = useState(false);
-  const [isPromo, setIsPromo] = useState(false);
+  const {
+    filteredUMKMs,
+    setUMKMs,
+    setSearchQuery,
+    setSelectedCategory,
+    setSelectedLocation,
+    togglePromo,
+    toggleNew,
+    isPromo,
+    isNew,
+  } = useUMKMStore();
 
-  // Filter data UMKM
-  const filteredUMKMs = useMemo(() => {
-    return mockUMKMs.filter((umkm) => {
-      const matchesSearch = umkm.name
-        .toLowerCase()
-        .includes(searchQuery.toLowerCase());
-      const matchesCategory =
-        selectedCategory === "" ||
-        umkm.category.toLowerCase() === selectedCategory.toLowerCase();
-      const matchesLocation =
-        selectedLocation === "" ||
-        umkm.region.toLowerCase() === selectedLocation.toLowerCase();
-      const matchesNew = !isNew || umkm.isNew === true;
-      const matchesPromo = !isPromo || umkm.promo === true;
-
-      return (
-        matchesSearch &&
-        matchesCategory &&
-        matchesLocation &&
-        matchesNew &&
-        matchesPromo
-      );
-    });
-  }, [searchQuery, selectedCategory, selectedLocation, isNew, isPromo]);
+  useEffect(() => {
+    setUMKMs(mockUMKMs);
+  }, [setUMKMs]);
 
   return (
-    <section className="w-full px-4 space-y-4">
-      {/* Search & Filter Bar */}
-      <div className="flex flex-col gap-4 items-center">
-        {/* Search Bar */}
-        <div className="flex flex-row gap-3 justify-start items-center">
-            <div className="relative w-full sm:w-1/3 md:w-120">
+    <section className="w-full pb-12 space-y-10">
+      {/* Title Section */}
+      <div className="text-center space-y-2 px-4">
+        <h2 className="text-2xl md:text-4xl font-bold text-gray-900">JELAJAHI UMKM LOKAL dengan BELIDEKAT</h2>
+        <p className="text-lg md:text-2xl text-gray-600">Search, Filter, and find it!</p>
+      </div>
+
+      {/* Search & Filter Controls */}
+      <div className="w-full max-w-7xl mx-auto px-4 space-y-4">
+        {/* Search + Dropdown Row */}
+        <div className="flex flex-col sm:flex-row flex-wrap gap-4">
+          {/* Search */}
+          <div className="relative flex-1 min-w-[250px]">
             <Input
               type="text"
-              placeholder="Search"
-              value={searchQuery}
+              placeholder="Cari UMKM..."
               onChange={(e) => setSearchQuery(e.target.value)}
-              className="pl-12 bg-white border-gray-300 focus:border-orange-500 focus:ring-orange-500 rounded-2xl"
+              className="pl-10 bg-white border-gray-300 focus:border-green-500 focus:ring-green-500 rounded-2xl"
             />
             <Search className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" />
           </div>
+          <div className="flex flex-row gap-4">
+            {/* Select Lokasi */}
+            <Select onValueChange={setSelectedLocation}>
+              <SelectTrigger className="w-1/2 sm:w-42 xl:w-50 bg-white rounded-2xl">
+                <SelectValue placeholder="Lokasi" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Lokasi</SelectLabel>
+                  {locations.map((loc) => (
+                    <SelectItem key={loc.value} value={loc.value}>
+                      {loc.label}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
 
-          {/* Select Lokasi */}
-          <Select onValueChange={setSelectedLocation}>
-            <SelectTrigger className="w-60 bg-white rounded-2xl">
-              <SelectValue placeholder="Lokasi" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Lokasi</SelectLabel>
-                {locations.map((loc) => (
-                  <SelectItem key={loc.value} value={loc.value}>
-                    {loc.label}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
-
-          {/* Select Kategori */}
-          <Select onValueChange={setSelectedCategory}>
-            <SelectTrigger className="w-60 bg-white rounded-2xl">
-              <SelectValue placeholder="Kategori" />
-            </SelectTrigger>
-            <SelectContent>
-              <SelectGroup>
-                <SelectLabel>Kategori</SelectLabel>
-                {categories.map((cat) => (
-                  <SelectItem key={cat.value} value={cat.value}>
-                    {cat.label}
-                  </SelectItem>
-                ))}
-              </SelectGroup>
-            </SelectContent>
-          </Select>
+            {/* Select Kategori */}
+            <Select onValueChange={setSelectedCategory}>
+              <SelectTrigger className="w-1/2 sm:w-40 xl:w-50 bg-white rounded-2xl">
+                <SelectValue placeholder="Kategori" />
+              </SelectTrigger>
+              <SelectContent>
+                <SelectGroup>
+                  <SelectLabel>Kategori</SelectLabel>
+                  {categories.map((cat) => (
+                    <SelectItem key={cat.value} value={cat.value}>
+                      {cat.label}
+                    </SelectItem>
+                  ))}
+                </SelectGroup>
+              </SelectContent>
+            </Select>
+          </div>
+          
         </div>
-        
 
-        {/* Tombol Filter */}
-        <div className="flex gap-3">
+        {/* Filter Buttons */}
+        <div className="flex flex-row flex-wrap gap-3 justify-start">
           <Button
             variant={isPromo ? "default" : "outline"}
-            onClick={() => setIsPromo((prev) => !prev)}
+            onClick={togglePromo}
             className={`flex items-center gap-1 ${
               isPromo
-                ? "bg-orange-500 text-white hover:bg-orange-600"
-                : "text-orange-600 border-orange-500 hover:bg-orange-50"
+                ? "bg-green-600 text-white hover:bg-orange-200 hover:text-orange-500"
+                : "text-green-600 border-green-500 hover:bg-orange-50 hover:text-green-500"
             }`}
           >
             Sedang Promo
@@ -134,24 +127,21 @@ export function FilterSections() {
 
           <Button
             variant={isNew ? "default" : "outline"}
-            onClick={() => setIsNew((prev) => !prev)}
+            onClick={toggleNew}
             className={`flex items-center gap-1 ${
               isNew
                 ? "bg-yellow-400 text-black hover:bg-yellow-500"
                 : "text-yellow-600 border-yellow-400 hover:bg-yellow-50"
             }`}
           >
-            Baru
+            UMKM Baru
           </Button>
         </div>
       </div>
 
-      {/* Hasil Grid */}
-      <div className="w-full">
-        <ShopGrid
-          umkms={filteredUMKMs}
-          title="Daftar UMKM"
-        />
+      {/* Grid */}
+      <div className="w-full max-w-7xl mx-auto px-4">
+        <ShopGrid umkms={filteredUMKMs} />
       </div>
     </section>
   );

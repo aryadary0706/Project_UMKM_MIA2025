@@ -1,53 +1,51 @@
 import Link from "next/link"
-import { MapPin } from "lucide-react"
+import { MapPin, Star } from "lucide-react"
+import { useUMKMStore, UMKM } from "@/lib/UMKMs"
 
-interface UMKM {
-  id: number
-  name: string
-  category: string
-  description: string
-  address: string
-  region: string
-  phone: string
-  image: string
-  website?: string
-  promo?: boolean
-  isNew?: boolean
-  isPopular?: boolean
-  gallery?: string[]
-}
 
-export function UMKMCard({ id, name, category, region, image }: UMKM) {
+
+export function UMKMCard({ id, name, category, region, image, Rating }: UMKM) {
   return (
-    <Link href={`/umkm/${id}`}>
-      <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer h-full max-w-72">
-        {/* Image Container */}
+    <Link href={`umkm/${id}`}>
+      <div className="bg-white rounded-xl overflow-hidden shadow-sm hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer h-full">
+        
+        {/* Image Section */}
         <div className="relative h-36 sm:h-40 md:h-44 lg:h-48 bg-gray-200 overflow-hidden">
+          {/* Image */}
           <img
             src={image || "/placeholder.svg"}
             alt={name}
             className="w-full h-full object-cover transition-transform duration-300 hover:scale-110"
           />
+
+          {/* Location Badge */}
+          <div className="absolute top-2 left-2 bg-black/60 text-white text-[10px] sm:text-xs px-2 py-0.5 rounded-full flex items-center gap-1">
+            <MapPin size={12} />
+            {region}
+          </div>
         </div>
 
         {/* Content */}
         <div className="p-3 sm:p-4">
-          {/* Nama UMKM */}
-          <h3 className="font-semibold sm:font-bold text-base sm:text-lg text-gray-900 line-clamp-2 mb-2">
-            {name}
-          </h3>
 
-          {/* Kategori */}
-          <div className="flex items-center gap-2 mb-2">
-            <span className="inline-block bg-blue-100 text-blue-700 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-medium">
-              {category}
-            </span>
+          {/* Top Row: Name + Rating */}
+          <div className="flex items-start justify-between gap-2 mb-2">
+            <h3 className="font-semibold sm:font-bold text-base sm:text-lg text-gray-900 line-clamp-2">
+              {name}
+            </h3>
+
+            {/* Rating Badge */}
+            {Rating && (
+              <div className="flex items-center gap-1 bg-gray-100 text-gray-700 px-2 py-0.5 rounded-full text-[10px] sm:text-xs font-medium shrink-0">
+                <Star size={12} className="text-yellow-400" />
+                {Rating}
+              </div>
+            )}
           </div>
 
-          {/* Lokasi */}
-          <div className="flex items-center gap-1.5 sm:gap-2 text-gray-500 text-xs sm:text-sm">
-            <MapPin size={14} className="text-blue-500 shrink-0" />
-            <span className="line-clamp-1">{region}</span>
+          {/* Category */}
+          <div className="inline-block bg-blue-100 text-blue-700 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-medium mb-2">
+            {category}
           </div>
         </div>
       </div>
