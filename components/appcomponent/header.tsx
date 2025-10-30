@@ -16,8 +16,8 @@ export function Header() {
           <div className="hidden md:flex items-center gap-8">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <div className="w-11 h-11 bg-primary rounded-lg flex items-center bg-linear-to-br from-green-400 to-green-600 justify-center">
-                <span className="text-white font-bold text-lg">
+              <div className="w-11 h-11 bg-linear-to-bl from-green-400 to-green-600 rounded-lg flex items-center justify-center">
+                <span className="text-white font-bold text-lg ">
                   <Cuboid className="w-7 h-7" />
                 </span>
               </div>

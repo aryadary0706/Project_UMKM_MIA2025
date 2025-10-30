@@ -16,6 +16,8 @@ import {
 import { Search } from "lucide-react";
 import mockUMKMs from "@/data/mockShops.json";
 import { ShopGrid } from "@/components/appcomponent/shop-grid";
+import { Suspense } from "react";
+import LoadingSpinner from "@/components/appcomponent/loadingSpinner";
 
 const categories = [
   { value: "semua", label: "Semua" },
@@ -141,7 +143,9 @@ export function FilterSections() {
 
       {/* Grid */}
       <div className="w-full max-w-7xl mx-auto px-4">
-        <ShopGrid umkms={filteredUMKMs} />
+        <Suspense fallback={<LoadingSpinner />}>
+          <ShopGrid umkms={filteredUMKMs} />
+        </Suspense>
       </div>
     </section>
   );
