@@ -7,7 +7,7 @@ export interface UMKM {
 	description: string;
 	address: string;
 	region: string;
-	phone: string;
+	phone?: string;
 	image: string;
 	website?: string;
 	promo?: boolean;
@@ -15,13 +15,14 @@ export interface UMKM {
 	isPopular?: boolean;
 	Rating: number;
 	hours: string;
-	whatsapp: string;
+	whatsapp?: string;
 	coordinates: {
 		lat: number;
 		lng: number;
 	};
 	gallery?: string[];
 }
+
 
 interface UMKMStoreState {
 	umkms: UMKM[];

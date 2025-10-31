@@ -34,7 +34,7 @@ export default function BannerCarousel() {
           {banners.map((banner, index) => (
             <CarouselItem key={index}>
               <Suspense fallback={<LoadingSpinner />}>
-                <div className="relative w-full h-75 sm:h-90 md:h-110 lg:h-130 rounded-3xl overflow-hidden">
+                <div className="relative w-full h-65 sm:h-95 md:h-115 lg:h-140 rounded-3xl overflow-hidden">
                   
                   {/* Gambar Background */}
                   <Image

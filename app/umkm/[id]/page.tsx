@@ -64,7 +64,7 @@ export default function UMKMDetailPage() {
 							</h1>
 							<div className="flex items-center gap-4 flex-wrap">
 								<span className="bg-primary-light text-primary px-4 py-1 rounded-full font-semibold">
-									{selectedUMKM.category}
+									{selectedUMKM.category}, {selectedUMKM.region}
 								</span>
 								<div className="flex items-center gap-1">
 									<Star
