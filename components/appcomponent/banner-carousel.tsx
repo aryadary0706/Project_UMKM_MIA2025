@@ -50,11 +50,11 @@ export default function BannerCarousel() {
 
                   {/* Konten Teks */}
                   <div className="relative z-10 flex flex-col items-end justify-center h-full px-4 md:px-8 text-white max-w-3xl ml-auto">
-                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3 drop-shadow-lg">
+                    <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold mb-3">
                       {banner.title}
                     </h2>
                     {banner.desc && (
-                      <p className="text-base sm:text-lg text-right drop-shadow">
+                      <p className="text-base sm:text-lg text-right">
                         {banner.desc}
                       </p>
                     )}

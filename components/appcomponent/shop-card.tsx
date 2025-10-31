@@ -19,7 +19,7 @@ export function UMKMCard({ id, name, category, region, image, Rating }: UMKM) {
           />
 
           {/* Location Badge */}
-          <div className="absolute top-2 left-2 bg-black/60 text-white text-[10px] sm:text-xs px-2 py-0.5 rounded-full flex items-center gap-1">
+          <div className="absolute top-4 left-4 bg-black/60 text-white text-[10px] sm:text-xs px-2 py-0.5 rounded-full flex items-center gap-1">
             <MapPin size={12} />
             {region}
           </div>
@@ -44,7 +44,7 @@ export function UMKMCard({ id, name, category, region, image, Rating }: UMKM) {
           </div>
 
           {/* Category */}
-          <div className="inline-block bg-blue-100 text-blue-700 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-medium mb-2">
+          <div className="inline-block bg-green-100 text-green-700 px-2 sm:px-3 py-0.5 sm:py-1 rounded-full text-[11px] sm:text-xs font-medium mb-2">
             {category}
           </div>
         </div>

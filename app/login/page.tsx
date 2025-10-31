@@ -2,11 +2,9 @@
 
 import type React from "react"
 
-import { useState, useEffect } from "react"
+import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
-import {Header} from "@/components/appcomponent/header"
-import {Footer} from "@/components/appcomponent/footer"
 import { Mail, Lock, Eye, EyeOff } from "lucide-react"
 
 export default function LoginPage() {
@@ -34,16 +32,11 @@ export default function LoginPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
-
       <main className="flex-1 bg-linear-to-br from-[#f3e9dd] to-white py-12 px-4">
         <div className="max-w-md mx-auto">
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="text-center mb-8">
-              <div className="w-16 h-16 mx-auto rounded-xl bg-linear-to-br from-[#3a5a40] to-[#A3B18A] flex items-center justify-center mb-4">
-                <span className="text-white font-bold text-2xl">N</span>
-              </div>
-              <h1 className="text-3xl font-bold text-[#1F2937] mb-2">Selamat Datang</h1>
+              <h1 className="text-3xl font-bold text-[#1F2937] mb-2">Login</h1>
               <p className="text-gray-600">Masuk ke akun NearBuy Anda</p>
             </div>
 
@@ -127,8 +120,6 @@ export default function LoginPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }
