@@ -1,43 +1,32 @@
 import { UMKMCard } from "./shop-card"
-
-interface UMKM {
-  id: number
-  name: string
-  category: string
-  description: string
-  address: string
-  region: string
-  phone: string
-  image: string
-  website?: string
-  promo?: boolean
-  isNew?: boolean
-  isPopular?: boolean
-  gallery?: string[]
-}
+import { UMKM } from "@/lib/UMKMs"
 
 interface UMKMGridProps {
   umkms: UMKM[]
   title?: string
+  loading?: boolean
+  emptyMessage?: string
+  layout?: "compact" | "spacious"
 }
 
-export function ShopGrid({ umkms, title }: UMKMGridProps) {
-  if (umkms.length === 0) {
+export function ShopGrid({ umkms }: UMKMGridProps) {
+  if (!umkms || umkms.length === 0) {
     return (
       <div className="text-center py-12">
-        <p className="text-text-light text-lg">Tidak ada UMKM yang ditemukan</p>
+        <p className="text-gray-500 text-lg">Tidak ada UMKM yang ditemukan</p>
       </div>
     )
   }
 
   return (
-    <div>
-      {title && <h2 className="text-3xl font-bold text-text mb-8">{title}</h2>}
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+    <section>
+      {/* Grid responsif menengah */}
+      <div className="grid grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-8 justify-center">
         {umkms.map((umkm) => (
           <UMKMCard key={umkm.id} {...umkm} />
         ))}
       </div>
-    </div>
+    </section>
   )
 }
+
