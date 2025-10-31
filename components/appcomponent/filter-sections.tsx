@@ -120,8 +120,8 @@ export function FilterSections() {
             onClick={togglePromo}
             className={`flex items-center gap-1 ${
               isPromo
-                ? "bg-green-600 text-white hover:bg-orange-200 hover:text-orange-500"
-                : "text-green-600 border-green-500 hover:bg-orange-50 hover:text-green-500"
+                ? "bg-green-600 text-white hover:bg-green-700"
+                : " bg-white text-yellow-600 border-yellow-400 hover:bg-yellow-50"
             }`}
           >
             Sedang Promo
@@ -130,7 +130,7 @@ export function FilterSections() {
           <Button
             variant={isNew ? "default" : "outline"}
             onClick={toggleNew}
-            className={`flex items-center gap-1 ${
+            className={`flex items-center gap-2 ${
               isNew
                 ? "bg-yellow-400 text-black hover:bg-yellow-500"
                 : "text-yellow-600 border-yellow-400 hover:bg-yellow-50"

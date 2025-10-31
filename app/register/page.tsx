@@ -6,9 +6,9 @@ import { useState } from "react"
 import { useRouter } from "next/navigation"
 import Link from "next/link"
 // import { useAuth } from "@/contexts/auth-context"
-import {Header} from "@/components/appcomponent/header"
-import {Footer} from "@/components/appcomponent/footer"
 import { Mail, Lock, UserIcon, Eye, EyeOff, Cuboid } from "lucide-react"
+import logo from "@/public/logo.png"
+import Image from "next/image"
 
 export default function RegisterPage() {
   const [name, setName] = useState("")
@@ -50,14 +50,13 @@ export default function RegisterPage() {
 
   return (
     <div className="min-h-screen flex flex-col">
-      <Header />
-
       <main className="flex-1 bg-linear-to-br from-[#f3e9dd] to-white py-12 px-4">
         <div className="max-w-md mx-auto">
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="text-center mb-8">
-              <div className="w-16 h-16 mx-auto rounded-xl  bg-linear-to-bl from-green-400 to-green-600 flex items-center justify-center mb-4">
-                <span className="text-white font-bold text-2xl"><Cuboid className="w-10 h-10"/></span>
+              <div className="flex justify-center items-center mb-3 mt-4">
+
+                <Image src={logo} alt="Marketeers Logo" width={45} height={45}/>
               </div>
               <h1 className="text-3xl font-bold text-[#1F2937] mb-2">Buat Akun Baru</h1>
               <p className="text-gray-600">Bergabung dengan Marketeers sekarang</p>
@@ -80,7 +79,7 @@ export default function RegisterPage() {
                     value={name}
                     onChange={(e) => setName(e.target.value)}
                     className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3a5a40] focus:border-transparent outline-none transition-all"
-                    placeholder="John Doe"
+                    placeholder="Your Name"
                     required
                   />
                 </div>
@@ -163,11 +162,11 @@ export default function RegisterPage() {
                 />
                 <label htmlFor="terms" className="text-sm text-gray-600">
                   Saya setuju dengan{" "}
-                  <Link href="#" className="text-[#3a5a40] hover:text-[#2d4630] font-medium">
+                  <Link href="#" className="text-[#3a5a40] hover:underline font-medium">
                     Syarat & Ketentuan
                   </Link>{" "}
                   dan{" "}
-                  <Link href="#" className="text-[#3a5a40] hover:text-[#2d4630] font-medium">
+                  <Link href="#" className="text-[#3a5a40] hover:underline font-medium">
                     Kebijakan Privasi
                   </Link>
                 </label>
@@ -193,8 +192,6 @@ export default function RegisterPage() {
           </div>
         </div>
       </main>
-
-      <Footer />
     </div>
   )
 }
