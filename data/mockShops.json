@@ -7,6 +7,11 @@
     "address": "Jl. Merdeka No. 45",
     "region": "Batununggal",
     "phone": "0812-3456-7890",
+    "whatsapp": "6281234567890",
+    "coordinates": {
+      "lat": -6.9158582,
+      "lng": 107.6311337
+    },
     "image": "https://images.unsplash.com/photo-1551033996-9cfddb3ffb1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJlZXQlMjBmb29kJTIwdmVuZG9yfGVufDF8fHx8MTc2MTIxMDY4NXww&ixlib=rb-4.1.0&q=80&w=1080",
     "website": "https://wabakso.com",
     "promo": true,
@@ -27,6 +32,11 @@
     "address": "Jl. Diponegoro No. 12",
     "region": "Bojongsoang",
     "phone": "0813-5678-9012",
+    "whatsapp": "6281356789012",
+    "coordinates": {
+      "lat": -6.921000,
+      "lng": 107.605000
+    },
     "image": "https://images.unsplash.com/photo-1635051296005-51184754615f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBzaG9wJTIwbG9jYWx8ZW58MXx8fHwxNzYxMjMzOTYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
     "promo": false,
     "Rating": 4.7,
@@ -45,6 +55,11 @@
     "address": "Jl. Raya Ciwidey KM 8",
     "region": "Buahbatu",
     "phone": "0857-1234-5678",
+    "whatsapp": "6285712345678",
+    "coordinates": {
+      "lat": -6.928500,
+      "lng": 107.611200
+    },
     "image": "https://images.unsplash.com/photo-1667539916609-c706d5b7ed65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXJiZXIlMjBzaG9wJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzYxMTM5MzgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
     "website": "https://gentlemenbarbershop.com",
     "promo": true,
@@ -63,6 +78,11 @@
     "address": "Jl. Sudirman No. 88",
     "region": "Dayeuhkolot",
     "phone": "0821-9876-5432",
+    "whatsapp": "6282198765432",
+    "coordinates": {
+      "lat": -6.910200,
+      "lng": 107.620100
+    },
     "image": "https://images.unsplash.com/photo-1728651028766-4ae2bfb49e56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWtlJTIwc2hvcCUyMGRpc3BsYXl8ZW58MXx8fHwxNzYxMjM3NDI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
     "promo": false,
     "Rating": 4.4,
@@ -81,6 +101,11 @@
     "address": "Jl. Gatot Subroto No. 22",
     "region": "Bojongsoang",
     "phone": "0856-2345-6789",
+    "whatsapp": "6285623456789",
+    "coordinates": {
+      "lat": -6.917800,
+      "lng": 107.602300
+    },
     "image": "https://images.unsplash.com/photo-1758767055264-bc7e859811d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsb2NhbCUyMGZvb2QlMjBzdGFsbHxlbnwxfHx8fDE3NjEyMzM5NjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
     "website": "https://warungsederhana.com",
     "isNew": true,
@@ -99,6 +124,11 @@
     "address": "Jl. Ahmad Yani No. 67",
     "region": "Buahbatu",
     "phone": "0811-7654-3210",
+    "whatsapp": "6281176543210",
+    "coordinates": {
+      "lat": -6.912300,
+      "lng": 107.615400
+    },
     "image": "https://images.unsplash.com/photo-1635059488890-558b1eb1f289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm9jZXJ5JTIwc3RvcmUlMjBsb2NhbHxlbnwxfHx8fDE3NjEyMzc0Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
     "Rating": 4.6,
     "isNew": true,
@@ -116,6 +146,11 @@
     "address": "Jl. Veteran No. 34",
     "region": "Batununggal",
     "phone": "0822-3456-7890",
+    "whatsapp": "6282234567890",
+    "coordinates": {
+      "lat": -6.919900,
+      "lng": 107.607700
+    },
     "image": "https://images.unsplash.com/photo-1651449815993-706eaa7a936a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFsbCUyMGJ1c2luZXNzJTIwc2hvcHxlbnwxfHx8fDE3NjEyMzM5NjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
     "website": "https://laundrykilat.com",
     "Rating": 4.4,
@@ -134,6 +169,11 @@
     "address": "Jl. Pemuda No. 56",
     "region": "Dayeuhkolot",
     "phone": "0823-8765-4321",
+    "whatsapp": "6282387654321",
+    "coordinates": {
+      "lat": -6.915600,
+      "lng": 107.613500
+    },
     "image": "https://images.unsplash.com/photo-1570857502809-08184874388e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwYm91dGlxdWV8ZW58MXx8fHwxNzYxMTQ2Mjk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
     "isPopular": true,
     "Rating": 4.6,
