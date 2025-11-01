@@ -45,7 +45,7 @@ export function ImageCarousel({ images, title }: ImageCarouselProps) {
 
 
   return (
-    <div className="relative w-full h-96 bg-gray-200 rounded-xl overflow-hidden group">
+    <div className="relative w-full h-96 border-2 bg-gray-200 rounded-xl overflow-hidden group">
       {/* Main Image */}
         <img
           src={imageUrl} // Menggunakan URL yang sudah diproses (termasuk fallback)

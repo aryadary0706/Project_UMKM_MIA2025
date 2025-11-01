@@ -4,11 +4,12 @@ import { Header } from "@/components/appcomponent/header";
 import { Footer } from "@/components/appcomponent/footer";
 import { ImageCarousel } from "@/components/appcomponent/image-carousel";
 import { ShopGrid } from "@/components/appcomponent/shop-grid";
-import { MapPin, Phone, Clock, Star } from "lucide-react";
+import { MapPin, Phone, Clock, Star, ChevronLeft } from "lucide-react";
 import { UMKM } from "@/lib/UMKMs";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import mockumkms from "@/data/mockShops.json";
+import { Button } from "@/components/ui/button";
 
 export default function UMKMDetailPage() {
 	const params = useParams();
@@ -31,7 +32,7 @@ export default function UMKMDetailPage() {
 
 	if (!selectedUMKM) {
 		return (
-			<div className="min-h-screen bg-background">
+			<div className="min-h-screen bg-[#F9F5F0]">
 				<Header />
 				<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
 					<p className="text-center text-text-light">
@@ -48,11 +49,10 @@ export default function UMKMDetailPage() {
 
 			<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
 				{/* Back Button */}
-				<Link
-					href="/"
-					className="text-primary hover:text-primary/80 font-medium mb-6 inline-block"
-				>
-					← Kembali ke Direktori
+				<Link href="/">
+					<Button variant="outline">
+						<ChevronLeft/> Kembali 
+					</Button>
 				</Link>
 
 				{/* Header */}
@@ -221,7 +221,7 @@ export default function UMKMDetailPage() {
 				{/* Related UMKM */}
 				<section className="border-t border-border pt-12">
 					<ShopGrid
-						umkms={mockumkms}
+						umkms={mockumkms.slice(0,3)}
 						title="UMKM Serupa di Sekitar Anda"
 					/>
 				</section>

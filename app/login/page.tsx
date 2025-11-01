@@ -21,7 +21,6 @@ export default function LoginPage() {
     setIsLoading(true)
 
     try {
-    //   await login(email, password)
       router.push("/")
     } catch (err) {
       setError("Email atau password salah")
@@ -37,7 +36,7 @@ export default function LoginPage() {
           <div className="bg-white rounded-2xl shadow-lg p-8">
             <div className="text-center mb-8">
               <h1 className="text-3xl font-bold text-[#1F2937] mb-2">Login</h1>
-              <p className="text-gray-600">Masuk ke akun NearBuy Anda</p>
+              <p className="text-gray-600">Masuk ke akun Marketeers Anda</p>
             </div>
 
             {error && (
@@ -75,7 +74,7 @@ export default function LoginPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3a5a40] focus:border-transparent outline-none transition-all"
-                    placeholder="••••••••"
+                    placeholder="........."
                     required
                   />
                   <button

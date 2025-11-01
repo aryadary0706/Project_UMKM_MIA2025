@@ -19,7 +19,7 @@ export function Header() {
           <div className="hidden md:flex items-center gap-8">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <Image src={logo} alt="Marketeers Logo" width={30} height={30} priority/>
+              <Image src={logo} alt="Marketeers Logo" width={35} height={35}/>
             </Link>
             <div className="gap-4 mx-0 text-lg flex font-semibold items-center h-6">
               <Link href="/" className="font-medium hover:underline transition">
@@ -44,7 +44,7 @@ export function Header() {
           {/* CTA Button */}
           <div className="hidden md:block">
             <Link href="/login">
-              <Button className="bg-green-700 flex flex-row gap-4 text-white px-4 py-2 rounded-lg hover:bg-green-500 transition font-medium items-center">
+              <Button variant="outline" className=" flex flex-row gap-4 px-4 py-2 rounded-lg transition font-medium items-center shadow-md">
                 <LogIn className="w-6 h-6"/>Login
               </Button>
             </Link>
@@ -90,7 +90,7 @@ export function Header() {
                   Profil
                 </Link>
                 <Link href="/login">
-                  <Button className="w-full flex flex-row justify-center gap-3 mt-4 bg-primary text-white px-4 py-2 rounded-md hover:bg-primary/90 transition font-medium bg-linear-to-br from-green-400 to-green-600">
+                  <Button variant="outline" className="w-full flex flex-row justify-center gap-3 mt-4 px-4 py-2 rounded-md transition font-medium">
                     <LogIn className="w-6 h-6"/>Login
                   </Button>
                 </Link>

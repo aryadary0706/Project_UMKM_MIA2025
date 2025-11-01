@@ -75,7 +75,7 @@
     "id": 4,
     "name": "Pangkas Rambut Sirius",
     "category": "Jasa",
-    "description": "Pangkas rambut Sirius adalah salon potong rambut yang menyediakan layanan potong rambut modern dan stylish untuk pria dan wanita. Dengan tenaga profesional dan peralatan berkualitas, kami siap memberikan tampilan terbaik untuk Anda.",
+    "description": "Pangkas rambut Sirius adalah salon potong rambut yang menyediakan layanan potong rambut yang  stylish untuk pria dan wanita. Dengan tenaga profesional dan peralatan berkualitas, kami siap memberikan tampilan terbaik untuk Anda.",
     "address": "Sukapura, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat",
     "region": "buahbatu",
     "phone": "0813-5678-9012",
@@ -133,7 +133,7 @@
   },
   {
     "id": 7,
-    "name": "LAUNDRYPEDIA - LAUNDRY TELKOM UNIVERSITY / UNIVERAITAS TELKOM / SUKABIRUS",
+    "name": "LAUNDRYPEDIA - LAUNDRY TELKOM UNIVERSITY",
     "category": "Jasa",
     "description": "Laundry cepat dan bersih dengan layanan antar jemput. Menggunakan deterjen ramah lingkungan untuk hasil cucian yang segar dan wangi",
     "address": "Griya Alifa, Jl. Sukabirus No.2, RT.02/RW.13, Citeureup, Dayeuhkolot, Bandung",
