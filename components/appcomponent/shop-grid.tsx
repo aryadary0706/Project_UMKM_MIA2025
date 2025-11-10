@@ -29,4 +29,3 @@ export function ShopGrid({ umkms }: UMKMGridProps) {
     </section>
   )
 }
-

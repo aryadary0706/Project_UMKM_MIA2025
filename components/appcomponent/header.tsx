@@ -10,6 +10,7 @@ import { Button } from "../ui/button"
 
 export function Header() {
   const [isOpen, setIsOpen] = useState(false)
+  const [isProfile, setIsProfile] = useState(false)
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-sm border-b-2">
