@@ -34,9 +34,7 @@ cd Nearby
 # 3. Install dependencies
 npm install
 # atau
-yarn install
+pnpm install
 
 # 4. Jalankan project
 npm run dev
-# atau
-yarn dev
