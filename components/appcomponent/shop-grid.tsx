@@ -21,7 +21,7 @@ export function ShopGrid({ umkms }: UMKMGridProps) {
   return (
     <section>
       {/* Grid responsif menengah */}
-      <div className="grid grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-8 justify-center">
+      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-4 md:gap-6 lg:gap-8 justify-center">
         {umkms.map((umkm) => (
           <UMKMCard key={umkm.id} {...umkm} />
         ))}
@@ -29,4 +29,3 @@ export function ShopGrid({ umkms }: UMKMGridProps) {
     </section>
   )
 }
-

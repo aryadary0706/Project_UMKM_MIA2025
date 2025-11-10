@@ -5,16 +5,20 @@ import BannerCarousel from "@/components/appcomponent/banner-carousel";
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#F9F5F0]">
+    <div className="min-h-screen bg-[#EEDFC5]">
       {/* Header */}
       <Header />
       <main className="flex flex-col">
-        {/* Hero Section */}
-      <div id="banner" className="flex pb-10 pt-8 px-10 w-full">
-        <BannerCarousel />
-      </div>
 
-      <div id="kategori" className="flex mt-3">
+        {/* Hero Section */}
+      <section className="w-full pt-15">
+        <div className="max-w-7xl mx-auto">
+          <BannerCarousel/>
+        </div>
+      </section>
+
+      {/* Content Session */}
+      <div id="kategori" className="w-full shadow-lg flex mt-2 rounded-t-[80px] bg-[#F9F5F0] border-2">
         <FilterSections />
       </div>
 

@@ -1,21 +1,27 @@
 import { create } from "zustand"
 
 export interface UMKM {
-  id: number
-  name: string
-  category: string
-  description: string
-  address: string
-  region: string
-  phone: string
-  image: string
-  website?: string
-  promo?: boolean
-  isNew?: boolean
-  isPopular?: boolean
-  Rating: number
-  hours: string
-  gallery?: string[]
+	id: number;
+	name: string;
+	category: string;
+	description: string;
+	address: string;
+	region: string;
+	phone?: string;
+	image?: string;
+	website?: string;
+	email?: string;
+	promo?: boolean;
+	isNew?: boolean;
+	isPopular?: boolean;
+	Rating: number;
+	hours: string;
+	whatsapp?: string;
+	coordinates: {
+		lat: number;
+		lng: number;
+	};
+	gallery?: string[];
 }
 
 interface UMKMStoreState {
@@ -110,8 +116,8 @@ export const useUMKMStore = create<UMKMStoreState>((set, get) => ({
         selectedLocation === "semua" ||
         umkm.region.toLowerCase() === selectedLocation.toLowerCase()
 
-      const matchesPromo = !isPromo || umkm.promo === true
-      const matchesNew = !isNew || umkm.isNew === true
+			const matchesPromo = !isPromo || umkm.promo;
+			const matchesNew = !isNew || umkm.isNew === true;
 
       return (
         matchesSearch &&

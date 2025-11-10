@@ -26,14 +26,17 @@ const categories = [
   { value: "jasa", label: "Jasa" },
   { value: "fashion", label: "Fashion" },
   { value: "elektronik", label: "Elektronik" },
+  { value: "lainnya", label: "Lainnya" },
 ];
 
 const locations = [
   { value: "semua", label: "Semua" },
-  { value: "bojongsoang", label: "Bojongsoang" },
   { value: "buahbatu", label: "Buahbatu" },
-  { value: "dayeuhkolot", label: "Dayeuhkolot" },
+  { value: "bandung kidul", label: "Bandung Kidul" },
   { value: "batununggal", label: "Batununggal" },
+  { value: "Kkaracondong", label: "Kiaracondong" },
+  { value: "lengkong", label: "Lengkong" },
+  { value: "cicendo", label: "Cicendo" },
 ];
 
 export function FilterSections() {
@@ -57,8 +60,8 @@ export function FilterSections() {
     <section className="w-full pb-12 space-y-10">
       {/* Title Section */}
       <div className="text-center space-y-2 px-4">
-        <h2 className="text-2xl md:text-4xl font-bold text-gray-900">JELAJAHI UMKM LOKAL dengan BELIDEKAT</h2>
-        <p className="text-lg md:text-2xl text-gray-600">Search, Filter, and find it!</p>
+        <h2 className="text-2xl md:text-3xl font-bold text-gray-900">Jelajahi berbagai UMKM di daerahmu</h2>
+        <p className="text-lg md:text-xl text-gray-600">Search, Filter, find it!</p>
       </div>
 
       {/* Search & Filter Controls */}

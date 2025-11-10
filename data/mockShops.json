@@ -7,16 +7,17 @@
     "address": "Jl. Merdeka No. 45",
     "region": "Batununggal",
     "phone": "0812-3456-7890",
-    "image": "https://images.unsplash.com/photo-1551033996-9cfddb3ffb1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJlZXQlMjBmb29kJTIwdmVuZG9yfGVufDF8fHx8MTc2MTIxMDY4NXww&ixlib=rb-4.1.0&q=80&w=1080",
-    "website": "https://wabakso.com",
-    "promo": true,
+    "whatsapp": "6281234567890",
+    "coordinates": {
+      "lat": -6.974552724022787,
+      "lng": 107.63336954649724
+    },
+    "image": "/images/img1-3.webp",
     "Rating": 4.9,
     "isNew": true,
     "hours": "10:00 - 22:00",
     "gallery": [
-      "https://images.unsplash.com/photo-1551033996-9cfddb3ffb1e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzdHJlZXQlMjBmb29kJTIwdmVuZG9yfGVufDF8fHx8MTc2MTIxMDY4NXww&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1743485753941-5d515a62628d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmb29kJTIwY291cnQlMjBjb2xvcmZ1bHxlbnwxfHx8fDE3NjEyMzc0Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1555369870-9e6da9929585?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsb2NhbCUyMG1hcmtldCUyMGlsbHVzdHJhdGlvbnxlbnwxfHx8fDE3NjEyMzc0Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      "/images/img1-1.webp", "/images/img1-2.webp", "/images/img1-3.webp"
     ]
   },
   {
@@ -27,8 +28,12 @@
     "address": "Jl. Diponegoro No. 12",
     "region": "Bojongsoang",
     "phone": "0813-5678-9012",
-    "image": "https://images.unsplash.com/photo-1635051296005-51184754615f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjb2ZmZWUlMjBzaG9wJTIwbG9jYWx8ZW58MXx8fHwxNzYxMjMzOTYyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    "promo": false,
+    "whatsapp": "6281356789012",
+    "coordinates": {
+      "lat": -6.921000,
+      "lng": 107.605000
+    },
+    "image": "/images/img2-1.webp",
     "Rating": 4.7,
     "isNew": false,
     "hours": "10:00 - 22:00",
@@ -39,17 +44,20 @@
   },
   {
     "id": 3,
-    "name": "Barbershop The Gentlemen",
-    "category": "Jasa",
-    "description": "Barbershop modern dengan pelayanan profesional. Spesialis cukur rambut pria, styling, dan grooming. Dikerjakan oleh barber berpengalaman.",
-    "address": "Jl. Raya Ciwidey KM 8",
-    "region": "Buahbatu",
-    "phone": "0857-1234-5678",
-    "image": "https://images.unsplash.com/photo-1667539916609-c706d5b7ed65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxiYXJiZXIlMjBzaG9wJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzYxMTM5MzgyfDA&ixlib=rb-4.1.0&q=80&w=1080",
-    "website": "https://gentlemenbarbershop.com",
-    "promo": true,
-    "Rating": 4.5,
-    "isNew": true,
+    "name": "Pisang Coklat Meleleh",
+    "category": "Kuliner",
+    "description": "Pisang coklat meleleh adalah camilan lezat yang terbuat dari pisang segar yang dibalut dengan coklat leleh. Cocok untuk dinikmati kapan saja sebagai hidangan penutup atau camilan manis.",
+    "address": "Gg. PGA, Lengkong, Kec. Lengkong, Kabupaten Bandung, Jawa Barat",
+    "region": "buahbatu",
+    "phone": "0813-5678-9012",
+    "whatsapp": "6281356789012",
+    "coordinates": {
+      "lat": -6.974551002790674,
+      "lng": 107.63262885990339
+    },
+    "image": "/images/img3-1.webp",
+    "Rating": 4.7,
+    "isNew": false,
     "hours": "10:00 - 22:00",
     "gallery": [
       "https://images.unsplash.com/photo-1667539916609-c706d5b7ed65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXJiZXIlMjBzaG9wJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzYxMTM5MzgyfDA&ixlib=rb-4.1.0&q=80&w=1080"
@@ -57,15 +65,19 @@
   },
   {
     "id": 4,
-    "name": "Toko Kue Manis Bahagia",
-    "category": "Kuliner",
-    "description": "Toko kue dan bakery artisan dengan resep keluarga turun temurun. Spesial kue ulang tahun custom, kue kering, dan roti premium. Bisa delivery dan COD.",
-    "address": "Jl. Sudirman No. 88",
-    "region": "Dayeuhkolot",
-    "phone": "0821-9876-5432",
-    "image": "https://images.unsplash.com/photo-1728651028766-4ae2bfb49e56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWtlJTIwc2hvcCUyMGRpc3BsYXl8ZW58MXx8fHwxNzYxMjM3NDI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    "promo": false,
-    "Rating": 4.4,
+    "name": "Pangkas Rambut Sirius",
+    "category": "Jasa",
+    "description": "Pangkas rambut Sirius adalah salon potong rambut yang menyediakan layanan potong rambut yang  stylish untuk pria dan wanita. Dengan tenaga profesional dan peralatan berkualitas, kami siap memberikan tampilan terbaik untuk Anda.",
+    "address": "Sukapura, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat",
+    "region": "buahbatu",
+    "phone": "0813-5678-9012",
+    "whatsapp": "6281356789012",
+    "coordinates": {
+      "lat": -6.975438687639599,
+      "lng": 107.63300546399566
+    },
+    "image": "/images/placeholder-shop.png",
+    "Rating": 4.7,
     "isNew": false,
     "hours": "10:00 - 22:00",
     "gallery": [
@@ -75,17 +87,19 @@
   },
   {
     "id": 5,
-    "name": "Warung Makan Sederhana",
-    "category": "Kuliner",
-    "description": "Warung makan tradisional dengan menu nusantara yang lezat dan harga terjangkau. Spesial nasi goreng kampung, soto ayam, dan rawon.",
-    "address": "Jl. Gatot Subroto No. 22",
-    "region": "Bojongsoang",
-    "phone": "0856-2345-6789",
-    "image": "https://images.unsplash.com/photo-1758767055264-bc7e859811d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsb2NhbCUyMGZvb2QlMjBzdGFsbHxlbnwxfHx8fDE3NjEyMzM5NjF8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    "website": "https://warungsederhana.com",
-    "isNew": true,
+    "name": "3l photocopy & Stationery",
+    "category": "lainnya",
+    "description": "Tempat fotocopy dan alat tulis lengkap dengan harga terjangkau. Menyediakan layanan fotocopy, print, scan, serta berbagai perlengkapan kantor dan sekolah.",
+    "address": "Jl. Mangga Dua No.29, Sukapura, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat",
+    "region": "buahbatu",
+    "phone": "0813-5678-9012",
+    "whatsapp": "6281356789012",
+    "coordinates": {
+      "lat": -6.9717114670263225, 
+      "lng": 107.63359430015461
+    },
+    "image": "/images/placeholder-shop.png",
     "Rating": 4.7,
-    "promo": false,
     "hours": "10:00 - 22:00",
     "gallery": [
       "https://images.unsplash.com/photo-1758767055264-bc7e859811d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxsb2NhbCUyMGZvb2QlMjBzdGFsbHxlbnwxfHx8fDE3NjEyMzM5NjF8MA&ixlib=rb-4.1.0&q=80&w=1080"
@@ -93,33 +107,38 @@
   },
   {
     "id": 6,
-    "name": "Minimarket Berkah Jaya",
-    "category": "Retail",
-    "description": "Minimarket dengan lengkap kebutuhan sehari-hari. Harga bersaing, produk fresh, dan pelayanan ramah. Buka 24 jam untuk kemudahan Anda.",
-    "address": "Jl. Ahmad Yani No. 67",
-    "region": "Buahbatu",
-    "phone": "0811-7654-3210",
-    "image": "https://images.unsplash.com/photo-1635059488890-558b1eb1f289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxncm9jZXJ5JTIwc3RvcmUlMjBsb2NhbHxlbnwxfHx8fDE3NjEyMzc0Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    "Rating": 4.6,
-    "isNew": true,
-    "promo": false,
-    "hours": "10:00 - 22:00",
-    "gallery": [
-      "https://images.unsplash.com/photo-1635059488890-558b1eb1f289?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxncm9jZXJ5JTIwc3RvcmUlMjBsb2NhbHxlbnwxfHx8fDE3NjEyMzc0Mjl8MA&ixlib=rb-4.1.0&q=80&w=1080"
-    ]
+    "name": "Paris Perfume",
+    "category": "Fashion",
+    "description": "Parfume original dengan berbagai pilihan aroma yang segar dan tahan lama. Cocok untuk pria dan wanita yang ingin tampil percaya diri sepanjang hari.",
+    "address": "Jl. Lengkong Besar No.27, Paledang, Kec. Lengkong, Kota Bandung, Jawa Barat",
+    "region": "lengkong",
+    "phone": "0813-5678-9012",
+    "whatsapp": "6281356789012",
+    "coordinates": {
+      "lat": -6.923111224001543, 
+      "lng": 107.61184085438724
+    },
+    "image": "/images/placeholder-shop.png",
+    "Rating": 4.7,
+    "isNew": false,
+    "hours": "08:00 - 19:00",
+    "gallery": []
   },
   {
     "id": 7,
     "name": "Laundry Kilat Express",
     "category": "Jasa",
-    "description": "Layanan laundry cepat dan berkualitas dengan sistem antar jemput gratis. Tersedia layanan kilat 24 jam untuk kebutuhan mendesak. Harga mulai Rp 5.000/kg.",
-    "address": "Jl. Veteran No. 34",
-    "region": "Batununggal",
-    "phone": "0822-3456-7890",
-    "image": "https://images.unsplash.com/photo-1651449815993-706eaa7a936a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzbWFsbCUyMGJ1c2luZXNzJTIwc2hvcHxlbnwxfHx8fDE3NjEyMzM5NjB8MA&ixlib=rb-4.1.0&q=80&w=1080",
-    "website": "https://laundrykilat.com",
-    "Rating": 4.4,
-    "promo": true,
+    "description": "Laundry cepat dan bersih dengan layanan antar jemput. Menggunakan deterjen ramah lingkungan untuk hasil cucian yang segar dan wangi",
+    "address": "Griya Alifa, Jl. Sukabirus No.2, RT.02/RW.13, Citeureup, Dayeuhkolot, Bandung",
+    "region": "buahbatu",
+    "phone": "081236086090",
+    "whatsapp": "6281356789012",
+    "coordinates": {
+      "lat": -6.978745002152406, 
+      "lng": 107.62900176797048
+    },
+    "image": "/images/placeholder-shop.png",
+    "Rating": 4.7,
     "isNew": false,
     "hours": "10:00 - 22:00",
     "gallery": [
@@ -128,20 +147,59 @@
   },
   {
     "id": 8,
-    "name": "Fashion Store Trendy",
-    "category": "Fashion",
-    "description": "Butik fashion dengan koleksi pakaian wanita dan pria terkini. Tersedia juga layanan custom jahit untuk acara spesial seperti pernikahan dan wisuda.",
-    "address": "Jl. Pemuda No. 56",
-    "region": "Dayeuhkolot",
-    "phone": "0823-8765-4321",
-    "image": "https://images.unsplash.com/photo-1570857502809-08184874388e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxmYXNoaW9uJTIwYm91dGlxdWV8ZW58MXx8fHwxNzYxMTQ2Mjk5fDA&ixlib=rb-4.1.0&q=80&w=1080",
-    "isPopular": true,
-    "Rating": 4.6,
+    "name": "Cyber Shop Telkom University",
+    "category": "elektronik",
+    "description": "Toko alat listrik dan elektronik lengkap dengan harga bersaing. Menyediakan berbagai perangkat elektronik",
+    "address": "Perumahan Griya Alifa, Jl. Sukabirus No.4, Citeureup, Kec. Dayeuhkolot, Kabupaten Bandung, Jawa Barat",
+    "region": "bandung kidul",
+    "phone": "0813-5678-9012",
+    "whatsapp": "6281356789012",
+    "coordinates": {
+      "lat": -6.978837610452338,
+      "lng": 107.62918041326888
+    },
+    "image": "/images/placeholder-shop.png",
+    "Rating": 4.7,
     "isNew": false,
-    "promo": true,
-    "hours": "10:00 - 22:00",
-    "gallery": [
-      "https://images.unsplash.com/photo-1570857502809-08184874388e?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxmYXNoaW9uJTIwYm91dGlxdWV8ZW58MXx8fHwxNzYxMTQ2Mjk5fDA&ixlib=rb-4.1.0&q=80&w=1080"
-    ]
+    "hours": "10:00 - 19:00",
+    "gallery": []
+  },
+  {
+    "id": 9,
+    "name": "Micro Koral Retail Bandung",
+    "category": "retail",
+    "description": "Toko retail untuk mahasiswa telkom university dengan berbagai kebutuhan sehari-hari lengkap dan harga terjangkau.",
+    "address": "Fakultas ilmu Terapan, Telkom University, Lt. 4, Gedung Selaru, Kabupaten Bandung, Jawa Barat 40257",
+    "region": "buahbatu",
+    "phone": "0813-5678-9012",
+    "whatsapp": "6281356789012",
+    "coordinates": {
+      "lat": -6.976490730707782,
+      "lng": 107.62444858448796
+    },
+    "image": "/images/placeholder-shop.png",
+    "Rating": 3.9,
+    "isNew": true,
+    "hours": "08:00 - 19:00",
+    "gallery": []
+  },
+  {
+    "id": 10,
+    "name": "Waroeng Mandja",
+    "category": "kuliner",
+    "description": "Gg. Sukabakti V, Sukapura, Kec. Kiaracondong, Kota Bandung, Jawa Barat",
+    "address": "Fakultas ilmu Terapan, Telkom University, Lt. 4, Gedung Selaru, Kabupaten Bandung, Jawa Barat 40257",
+    "region": "kiaracondong",
+    "phone": "0813-5678-9012",
+    "whatsapp": "6281356789012",
+    "coordinates": {
+      "lat": -6.932165229999814, 
+      "lng": 107.65448566822766
+    },
+    "image": "/images/placeholder-shop.png",
+    "Rating": 3.9,
+    "isNew": false,
+    "hours": "08:00 - 19:00",
+    "gallery": []
   }
 ]
