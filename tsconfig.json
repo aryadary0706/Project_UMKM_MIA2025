@@ -37,7 +37,7 @@
     "**/*.mts",
     ".next\\dev/types/**/*.ts",
     ".next\\dev/types/**/*.ts"
-  ],
+, "components/appcomponent/loadingSpinner.jsx"  ],
   "exclude": [
     "node_modules"
   ]

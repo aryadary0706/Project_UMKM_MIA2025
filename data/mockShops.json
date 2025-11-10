@@ -1,11 +1,11 @@
 [
   {
     "id": 1,
-    "name": "Warung Bakso Pak Kumis",
+    "name": "Warteg Barokah",
     "category": "Kuliner",
-    "description": "Bakso daging sapi asli dengan kuah gurih dan mie kenyal. Sudah berdiri sejak 1995 dan menjadi favorit warga sekitar. Porsi jumbo dengan harga terjangkau!",
-    "address": "Jl. Merdeka No. 45",
-    "region": "Batununggal",
+    "description": "Warteg dengan berbagai pilihan menu masakan rumahan yang lezat dan harga terjangkau. Spesial nasi campur, ayam goreng, dan sayur asem. Tentu saja dengan harga terjangkau untuk semua kalangan.",
+    "address": "Gg. PGA, Lengkong, Kabupaten Bandung, Jawa Barat",
+    "region": "buahbatu",
     "phone": "0812-3456-7890",
     "whatsapp": "6281234567890",
     "coordinates": {
@@ -15,18 +15,20 @@
     "image": "/images/img1-3.webp",
     "Rating": 4.9,
     "isNew": true,
-    "hours": "10:00 - 22:00",
+    "hours": "08:00 - 20:00",
     "gallery": [
-      "/images/img1-1.webp", "/images/img1-2.webp", "/images/img1-3.webp"
+      "/images/img1-1.webp",
+      "/images/img1-2.webp",
+      "/images/img1-3.webp"
     ]
   },
   {
     "id": 2,
-    "name": "Kedai Kopi Nusantara",
+    "name": "Warung Makan McDoen",
     "category": "Kuliner",
-    "description": "Kedai kopi lokal dengan biji kopi pilihan dari berbagai daerah di Indonesia. Suasana cozy dengan WiFi gratis, cocok untuk meeting atau ngerjain tugas.",
-    "address": "Jl. Diponegoro No. 12",
-    "region": "Bojongsoang",
+    "description": "Warteg dengan berbagai pilihan menu masakan rumahan yang lezat dan harga terjangkau. Tentu saja dengan harga terjangkau untuk semua kalangan.",
+    "address": "Gg. PGA, Lengkong, Kec. Lengkong, Kabupaten Bandung, Jawa Barat",
+    "region": "buahbatu",
     "phone": "0813-5678-9012",
     "whatsapp": "6281356789012",
     "coordinates": {
@@ -38,8 +40,9 @@
     "isNew": false,
     "hours": "10:00 - 22:00",
     "gallery": [
-      "https://images.unsplash.com/photo-1635051296005-51184754615f?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxjb2ZmZWUlMjBzaG9wJTIwbG9jYWx8ZW58MXx8fHwxNjEyMzM5NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1555369870-9e6da9929585?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxsb2NhbCUyMG1hcmtldCUyMGlsbHVzdHJhdGlvbnxlbnwxfHx8fDE3NjEyMzc0Mjd8MA&ixlib=rb-4.1.0&q=80&w=1080"
+      "/images/img2-1.webp",
+      "/images/img2-2.webp",
+      "/images/img2-3.webp"
     ]
   },
   {
@@ -60,7 +63,9 @@
     "isNew": false,
     "hours": "10:00 - 22:00",
     "gallery": [
-      "https://images.unsplash.com/photo-1667539916609-c706d5b7ed65?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYXJiZXIlMjBzaG9wJTIwaW50ZXJpb3J8ZW58MXx8fHwxNzYxMTM5MzgyfDA&ixlib=rb-4.1.0&q=80&w=1080"
+      "/images/img3-1.webp",
+      "/images/img3-2.webp",
+      "/images/img3-3.webp"
     ]
   },
   {
@@ -80,10 +85,7 @@
     "Rating": 4.7,
     "isNew": false,
     "hours": "10:00 - 22:00",
-    "gallery": [
-      "https://images.unsplash.com/photo-1728651028766-4ae2bfb49e56?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxjYWtlJTIwc2hvcCUyMGRpc3BsYXl8ZW58MXx8fHwxNzYxMjM3NDI4fDA&ixlib=rb-4.1.0&q=80&w=1080",
-      "https://images.unsplash.com/photo-1644015272264-2d70518c2046?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxiYWtlcnklMjBzdG9yZXxlbnwxfHx8fDE3NjEyMzM5NjJ8MA&ixlib=rb-4.1.0&q=80&w=1080"
-    ]
+    "gallery": []
   },
   {
     "id": 5,
@@ -100,10 +102,9 @@
     },
     "image": "/images/placeholder-shop.png",
     "Rating": 4.7,
-    "hours": "10:00 - 22:00",
-    "gallery": [
-      "https://images.unsplash.com/photo-1758767055264-bc7e859811d9?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxsb2NhbCUyMGZvb2QlMjBzdGFsbHxlbnwxfHx8fDE3NjEyMzM5NjF8MA&ixlib=rb-4.1.0&q=80&w=1080"
-    ]
+    "isNew": false,
+    "hours": "09:00 - 23:00",
+    "gallery": []
   },
   {
     "id": 6,
@@ -126,7 +127,7 @@
   },
   {
     "id": 7,
-    "name": "Laundry Kilat Express",
+    "name": "LAUNDRYPEDIA - LAUNDRY TELKOM UNIVERSITY",
     "category": "Jasa",
     "description": "Laundry cepat dan bersih dengan layanan antar jemput. Menggunakan deterjen ramah lingkungan untuk hasil cucian yang segar dan wangi",
     "address": "Griya Alifa, Jl. Sukabirus No.2, RT.02/RW.13, Citeureup, Dayeuhkolot, Bandung",
@@ -140,10 +141,8 @@
     "image": "/images/placeholder-shop.png",
     "Rating": 4.7,
     "isNew": false,
-    "hours": "10:00 - 22:00",
-    "gallery": [
-      "https://images.unsplash.com/photo-1651449815993-706eaa7a936a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHxzbWFsbCUyMGJ1c2luZXNzJTIwc2hvcHxlbnwxfHx8fDE3NjEyMzM5NjB8MA&ixlib=rb-4.1.0&q=80&w=1080"
-    ]
+    "hours": "07:00 - 20:00",
+    "gallery": []
   },
   {
     "id": 8,

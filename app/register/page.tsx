@@ -19,7 +19,6 @@ export default function RegisterPage() {
   const [showConfirmPassword, setShowConfirmPassword] = useState(false)
   const [isLoading, setIsLoading] = useState(false)
   const [error, setError] = useState("")
-//   const { register } = useAuth()
   const router = useRouter()
 
   const handleSubmit = async (e: React.FormEvent) => {
@@ -39,7 +38,7 @@ export default function RegisterPage() {
     setIsLoading(true)
 
     try {
-    //   await register(name, email, password)
+
       router.push("/")
     } catch (err) {
       setError("Terjadi kesalahan, silakan coba lagi")
@@ -59,7 +58,7 @@ export default function RegisterPage() {
                 <Image src={logo} alt="Marketeers Logo" width={45} height={45}/>
               </div>
               <h1 className="text-3xl font-bold text-[#1F2937] mb-2">Buat Akun Baru</h1>
-              <p className="text-gray-600">Bergabung dengan Marketeers sekarang</p>
+              <p className="text-gray-600">Bergabung dengan Nearby sekarang</p>
             </div>
 
             {error && (
@@ -115,7 +114,7 @@ export default function RegisterPage() {
                     value={password}
                     onChange={(e) => setPassword(e.target.value)}
                     className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3a5a40] focus:border-transparent outline-none transition-all"
-                    placeholder="••••••••"
+                    placeholder="......"
                     required
                   />
                   <button
@@ -140,7 +139,7 @@ export default function RegisterPage() {
                     value={confirmPassword}
                     onChange={(e) => setConfirmPassword(e.target.value)}
                     className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3a5a40] focus:border-transparent outline-none transition-all"
-                    placeholder="••••••••"
+                    placeholder="......"
                     required
                   />
                   <button
