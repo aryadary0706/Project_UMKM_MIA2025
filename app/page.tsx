@@ -10,7 +10,7 @@ export default function App() {
       <Header />
       <main className="flex flex-col">
         {/* Hero Section */}
-      <div id="banner" className="flex pb-10 pt-8 px-10 w-full">
+      <div id="banner" className="flex w-full">
         <BannerCarousel />
       </div>
 

@@ -18,7 +18,7 @@ export function Footer() {
                   height={50}
                 />
               </div>
-              <span className="font-bold text-lg">nearby</span>
+              <span className="font-bold text-lg">Nearby</span>
             </div>
             <p className="text-gray-300 text-sm">Temukan UMKM Terbaik di Sekitarmu</p>
           </div>
@@ -85,14 +85,14 @@ export function Footer() {
               </li>
               <li className="flex items-start gap-2">
                 <MapPin size={16} className="text-[#F9F5F0] mt-0.5" />
-                <span className="text-[#F9F5F0] hover:text-yellow-100">Jakarta, Indonesia</span>
+                <span className="text-[#F9F5F0] hover:text-yellow-100">Bandung, Indonesia</span>
               </li>
             </ul>
           </div>
         </div>
 
         <div className="border-t border-gray-700 pt-8">
-          <p className="text-center text-sm text-gray-400">© 2025 BeliDekat. Semua hak dilindungi.</p>
+          <p className="text-center text-sm text-gray-400">© 2025 Nearby. Semua hak dilindungi.</p>
         </div>
       </div>
     </footer>

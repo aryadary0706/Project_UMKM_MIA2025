@@ -19,7 +19,7 @@ export function Header() {
           <div className="hidden md:flex items-center gap-8">
             {/* Logo */}
             <Link href="/" className="flex items-center gap-2">
-              <Image src={logo} alt="Marketeers Logo" width={35} height={35}/>
+              <Image src={logo} alt="Nearby Logo" width={35} height={35}/>
             </Link>
             <div className="gap-4 mx-0 text-lg flex font-semibold items-center h-6">
               <Link href="/" className="font-medium hover:underline transition">

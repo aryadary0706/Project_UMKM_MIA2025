@@ -8,8 +8,9 @@ export interface UMKM {
 	address: string;
 	region: string;
 	phone?: string;
-	image: string;
+	image?: string;
 	website?: string;
+	email?: string;
 	promo?: boolean;
 	isNew?: boolean;
 	isPopular?: boolean;

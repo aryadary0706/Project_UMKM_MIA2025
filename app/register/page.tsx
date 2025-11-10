@@ -58,7 +58,7 @@ export default function RegisterPage() {
                 <Image src={logo} alt="Marketeers Logo" width={45} height={45}/>
               </div>
               <h1 className="text-3xl font-bold text-[#1F2937] mb-2">Buat Akun Baru</h1>
-              <p className="text-gray-600">Bergabung dengan Marketeers sekarang</p>
+              <p className="text-gray-600">Bergabung dengan Nearby sekarang</p>
             </div>
 
             {error && (
