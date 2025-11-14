@@ -2,16 +2,17 @@ import { Header } from "@/components/appcomponent/header";
 import { Footer } from "@/components/appcomponent/footer";
 import { FilterSections } from "@/components/appcomponent/filter-sections";
 import BannerCarousel from "@/components/appcomponent/banner-carousel";
+import { User } from "@/lib/User";
 
 export default function App() {
   return (
     <div className="min-h-screen bg-[#EEDFC5]">
       {/* Header */}
-      <Header />
+      <Header/>
       <main className="flex flex-col">
 
         {/* Hero Section */}
-      <section className="w-full pt-15">
+      <section className="w-full pt-15 bg-[#EEDFC5]">
         <div className="max-w-7xl mx-auto">
           <BannerCarousel/>
         </div>
