@@ -8,8 +8,9 @@ import { BusinessIdentity } from "@/components/appcomponent/form/IdentityForm";
 import { Address } from "@/components/appcomponent/form/addressForm";
 import { Operational } from "@/components/appcomponent/form/operationalForm";
 import { useUMKMStore } from "@/lib/UMKMs";
-import { useUserStore } from "@/lib/User";
-import { toast } from "sonner";
+import { useUserStore, User } from "@/lib/User";
+import Link from "next/link";
+import { Button } from "@/components/ui/button";
 
 interface FormData {
   name: string;
@@ -30,18 +31,20 @@ interface FormData {
 }
 
 export default function FormAffiliate() {
-  const addUMKM = useUMKMStore((state) => state.addUMKM);
+  const createUMKM = useUMKMStore((state) => state.createUMKM);
   const router = useRouter();
+  const setAffiliateStatus = useUserStore((state) => state.setAffiliateStatus);
 
-  const isAffiliate = false; // ubah jadi true untuk tes redirect ke /affiliasi/page
+  const MockUser = useUserStore((state) => state.user);
 
-  useEffect(() => {
-    if (isAffiliate) {
-      router.push("/affiliasi");
-    } else {
-      router.push("/affiliasi/form");
-    }
-  }, [isAffiliate, router])
+//   useEffect(() => {
+//   if (!MockUser) return;
+
+//   if (MockUser.is_affiliate) {
+//     router.push("/affiliasi");
+//   }
+// }, [MockUser, router]);
+
 
   const [formData, setFormData] = useState<FormData>({
     name: "",
@@ -77,11 +80,6 @@ export default function FormAffiliate() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.phone || !formData.owner) {
-      alert("Mohon lengkapi data yang wajib diisi");
-      return;
-    }
-
     // 📌 Convert FormData → UMKM
     const newUMKM = {
       id: 0, // akan di-generate otomatis di store
@@ -100,18 +98,24 @@ export default function FormAffiliate() {
       isNew: true,
     };
 
-    addUMKM(newUMKM);
+    createUMKM(newUMKM);
+    setAffiliateStatus(true);
 
     alert("UMKM berhasil ditambahkan!");
+    router.push("/affiliasi");
   };
 
   return (
     <div className="min-h-screen bg-[#EEDFC5]">
       <Header />
 
-      <main className="max-w-7xl mx-auto py-8">
-        <div className="flex mb-6 justify-center">
-          <span className="text-4xl font-bold">FORMULIR ...</span>
+      <main className="max-w-7xl mx-auto py-6 px-8">
+        <div className="flex mb-4 justify-start items-center gap-6">
+          <Link href="/">
+          <Button variant="secondary" className="border border-gray-800">
+            Kembali ke Beranda
+          </Button>
+        </Link>
         </div>
         <form onSubmit={handleSubmit}>
           <BusinessIdentity
@@ -145,13 +149,17 @@ export default function FormAffiliate() {
             />
           </div>
 
-          <div className="flex justify-end mt-6">
-            <button
-              type="submit"
-              className="bg-green-600 text-white px-8 py-3 rounded-lg font-semibold hover:bg-green-500 transition-colors shadow-lg"
-            >
-              Submit Afiliasi
-            </button>
+          <div>
+            <span className="text-bold text-sm md:text-md">Tekan Tombol submit jika sudah mengisi form tersebut. Perhatikan data yang sudah dimasukan benar adanya</span>
+          </div>
+
+          <div className="flex justify-start mt-6">
+              <Button
+                variant="default"
+                className="bg-white text-gray-700 px-5 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+                >
+                Submit Afiliasi
+              </Button>
           </div>
         </form>
       </main>

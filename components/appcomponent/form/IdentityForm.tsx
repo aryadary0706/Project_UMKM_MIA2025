@@ -26,7 +26,7 @@ export const BusinessIdentity: React.FC<BusinessIdentityProps> = ({
   };
 
   return (
-    <div className="bg-white rounded-2xl border-2 border-[#8B6F47] p-8 mb-6 mx-6 md:mx-0">
+    <div className="bg-white rounded-2xl border-2 border-[#8B6F47] px-14 py-10 mb-6  md:mx-0">
       <h2 className="text-xl md:text-2xl font-bold mb-3">IDENTITAS USAHA</h2>
       <span className="text-md font-medium text-gray-800 mb-6 block">Form ini menyangkut mengenai data usaha anda seperti nama, jenis usaha, dll. Isi identitas usaha Anda dengan lengkap dan benar.</span>
       
@@ -88,7 +88,7 @@ export const BusinessIdentity: React.FC<BusinessIdentityProps> = ({
               type="tel"
               value={formData.whatsapp}
               onChange={(e) => onChange('whatsapp', e.target.value)}
-              placeholder='0'
+              placeholder='08XXXXXXXXXX'
               className="w-full px-4 py-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8B6F47]"
             />
           </div>
@@ -117,7 +117,10 @@ export const BusinessIdentity: React.FC<BusinessIdentityProps> = ({
                   onChange={(e) => handleFileChange('coverImage', e)}
                   className="hidden"
                 />
-                <Upload className="w-8 h-8 text-gray-400" />
+                <div className='flex flex-col gap-2 items-center'>
+                  <Upload className="w-8 h-8 text-gray-400" />
+                  <span className='text-xs text-gray-400'>Max. File Upload 1 MB</span>
+                </div>
               </label>
             </div>
 
@@ -130,7 +133,10 @@ export const BusinessIdentity: React.FC<BusinessIdentityProps> = ({
                   onChange={(e) => handleFileChange('image', e)}
                   className="hidden"
                 />
-                <Upload className="w-8 h-8 text-gray-400" />
+                <div className='flex flex-col gap-2 items-center'>
+                  <Upload className="w-8 h-8 text-gray-400" />
+                  <span className='text-xs text-gray-400'>Max. File Upload 1 MB</span>
+                </div>
               </label>
             </div>
           </div>

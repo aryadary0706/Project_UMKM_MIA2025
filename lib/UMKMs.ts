@@ -48,7 +48,7 @@ interface UMKMStoreState {
     
     // Actions
     setUMKMs: (data: UMKM[]) => void;
-    addUMKM: (umkm: UMKM) => void;
+    createUMKM: (umkm: UMKM) => void;
     updateUMKM: (id: number, data: Partial<UMKM>) => void;
     deleteUMKM: (id: number) => void;
     setSearchQuery: (query: string) => void;
@@ -89,7 +89,7 @@ export const useUMKMStore = create<UMKMStoreState>()(
                         error: null 
                     }),
 
-                addUMKM: (umkm) =>
+                createUMKM: (umkm) =>
                     set((state) => {
                         // Logika untuk menghasilkan ID baru yang unik (simulasi auto-increment)
                         const newId = state.umkms.length > 0 

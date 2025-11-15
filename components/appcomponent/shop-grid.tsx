@@ -1,5 +1,6 @@
 import { UMKMCard } from "./shop-card"
 import { UMKM } from "@/lib/UMKMs"
+import Image from "next/image"
 
 interface UMKMGridProps {
   umkms: UMKM[]
@@ -12,8 +13,15 @@ interface UMKMGridProps {
 export function ShopGrid({ umkms }: UMKMGridProps) {
   if (!umkms || umkms.length === 0) {
     return (
-      <div className="text-center py-12">
-        <p className="text-gray-500 text-lg">Tidak ada UMKM yang ditemukan</p>
+      <div className="flex flex-col justify-center items-center">
+        <Image
+          src="House searching-pana.svg"
+          alt="No UMKM Found"
+          width={300}
+          height={300}
+          className="mb-2"
+        />
+        <p className="text-gray-900 font-bold text-lg">Tidak ada UMKM yang ditemukan</p>
       </div>
     )
   }

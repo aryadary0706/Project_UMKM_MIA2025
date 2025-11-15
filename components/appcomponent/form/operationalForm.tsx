@@ -89,11 +89,11 @@ export const Operational: React.FC<OperationalProps> = ({ formData, onChange }) 
 
         {/* Hari Operasional Section */}
         <div>
-          <label className="block text-base font-semibold mb-3 text-[#333]">Hari Operasional</label>
+          <label className="block text-base font-semibold text-[#333]">Hari Operasional</label>
 
-          <div className="flex flex-col gap-4">
-            {/* Kolom Kiri: Pilihan Grup Hari */}
-            <div className="flex flex-row flex-wrap gap-3 p-3 border-b border-gray-600">
+          <div className="flex flex-col">
+            {/* Kolom Atas: Pilihan Grup Minggu */}
+            <div className="flex flex-row flex-wrap gap-5 p-3">
               {weeks.map((week) => {
                 const isSelected = isExactGroupSelected(week.days);
 
@@ -103,7 +103,7 @@ export const Operational: React.FC<OperationalProps> = ({ formData, onChange }) 
                     type="button"
                     onClick={() => handleWeekToggle(week.days)}
                     className={`
-                      max-w-auto h-auto text-sm font-medium py-3 px-3 rounded-md transition-all duration-200
+                      max-w-auto h-auto text-md font-mediumpy-3 px-3 rounded-md transition-all duration-200
                       ${isSelected 
                         ? 'bg-green-500 text-white hover:bg-green-600 border-green-500 shadow-md' 
                         : 'bg-white text-gray-700 border border-gray-300 hover:bg-gray-50'
@@ -116,7 +116,9 @@ export const Operational: React.FC<OperationalProps> = ({ formData, onChange }) 
               })}
             </div>
 
-            {/* Kolom Kanan: Pilihan Hari Individual */}
+            <div className="border-t border-gray-300 my-1" />
+
+            {/* Kolom Atas: Pilihan Grup Minggu */}
             <div className="flex flex-row flex-wrap gap-3 p-3">
               {days.map((day) => {
                 const isSelected = selectedDays.includes(day.value);

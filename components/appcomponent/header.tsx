@@ -28,13 +28,13 @@ export function Header() {
 
             {/* Destkop Navigation */}
             <div className="hidden md:flex gap-3 text-md font-semibold items-center h-6">
-              <Link href="/" className="font-light hover:underline transition">
+              <Link href="/" className="font-semibold hover:underline transition">
                 Home
               </Link>
-              <Link href="#kategori" className="font-light  hover:underline transition">
+              <Link href="#kategori" className="font-semibold  hover:underline transition">
                 Search
               </Link>
-              <Link href="#footer" className="font-light  hover:underline transition">
+              <Link href="#footer" className="font-semibold  hover:underline transition">
                 About Us
               </Link>
             </div>
@@ -43,7 +43,7 @@ export function Header() {
           {/* Profil (Username & Avatar) */}
           <div className="flex flex-wrap items-center gap-2">
             <div className="hidden md:flex items-center gap-2">
-              <h1 className="font-light text-gray-800 mr-2">{user.username}</h1>
+              <h1 className="font-bold text-gray-800 mr-2">{user.username}</h1>
               <button onClick={()=>setIsPopup(!isPopup)} className="focus:outline-none">
                 <Avatar>
                   <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" className="w-9 h-9 rounded-full" />
@@ -77,11 +77,6 @@ export function Header() {
               )}
             </AnimatePresence>
           </div>        
-
-          {/* Icon hidden : md
-          <Link href="/" className="md:hidden flex items-start gap-2">
-            <Image src={logo} alt="Nearby Logo" width={35} height={35} priority/>
-          </Link> */}
 
           {/* Mobile Menu Button */}
           <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>

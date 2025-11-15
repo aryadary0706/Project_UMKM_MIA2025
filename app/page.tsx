@@ -12,7 +12,7 @@ export default function App() {
       <main className="flex flex-col">
 
         {/* Hero Section */}
-      <section className="w-full pt-15 bg-[#EEDFC5]">
+      <section className="w-full pt-3 bg-[#EEDFC5]">
         <div className="max-w-7xl mx-auto">
           <BannerCarousel/>
         </div>

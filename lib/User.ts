@@ -10,6 +10,7 @@ export interface User {
 interface UserState {
   user: User | null;
   setUser: (user: User | null) => void;
+  setAffiliateStatus: (isAffiliate: boolean) => void;
 }
 
 export const useUserStore = create<UserState>((set) => ({
@@ -21,4 +22,14 @@ export const useUserStore = create<UserState>((set) => ({
     owned_umkm_id: null,
   },
   setUser: (user) => set({ user }),
+  setAffiliateStatus: (isAffiliate: boolean) =>
+  set((state) => {
+    console.log("Affiliate status updated to:", isAffiliate);
+
+    return {
+      user: state.user
+        ? { ...state.user, is_affiliate: isAffiliate }
+        : null,
+    };
+  }),
 }));

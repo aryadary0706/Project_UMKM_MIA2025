@@ -1,6 +1,9 @@
 // components/form/Address.tsx
+"use client";
+
 import React from 'react';
 import { Button } from '@/components/ui/button';
+import { toast } from 'sonner';
 
 interface AddressProps {
   formData: {
@@ -13,6 +16,7 @@ interface AddressProps {
 export const Address: React.FC<AddressProps> = ({ formData, onChange }) => {
   const handleGoogleMaps = () => {
     // window.open('https://www.google.com/maps', '_blank');
+    alert('This would open Google Maps in a new tab.');
   };
 
   return (
@@ -52,8 +56,8 @@ export const Address: React.FC<AddressProps> = ({ formData, onChange }) => {
 
         <Button
           variant={'outline'}
-          type="button"
-          onClick={handleGoogleMaps}
+          type='button'
+          onClick={() => toast.success('Telah menandai lokasi anda!')}
         >
           Hubungkan ke Google Maps
         </Button>
