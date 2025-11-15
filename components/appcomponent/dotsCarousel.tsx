@@ -8,7 +8,7 @@ interface CarouselDotsProps {
 
 export default function CarouselDots({ total, currentIndex, onDotClick }: CarouselDotsProps) {
   return (
-    <div className="flex items-center justify-center gap-1 mt-7">
+    <div className="flex items-center justify-center gap-2">
       {Array.from({ length: total }).map((_, index) => (
         <button
           key={index}
@@ -17,7 +17,7 @@ export default function CarouselDots({ total, currentIndex, onDotClick }: Carous
             currentIndex === index ? "scale-110 opacity-100" : "opacity-40"
           }`}
         >
-          <Dot size={currentIndex === index ? 28 : 20} />
+          <Dot size={currentIndex === index ? 34 : 25} />
         </button>
       ))}
     </div>

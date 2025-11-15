@@ -1,196 +1,204 @@
-"use client"
+"use client";
 
-import type React from "react"
-
-import { useState } from "react"
-import { useRouter } from "next/navigation"
-import Link from "next/link"
-// import { useAuth } from "@/contexts/auth-context"
-import { Mail, Lock, UserIcon, Eye, EyeOff, Cuboid } from "lucide-react"
-import logo from "@/public/logo.png"
-import Image from "next/image"
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Link from "next/link";
+import { Mail, Lock, User, Eye, EyeOff } from "lucide-react";
+import Image from "next/image";
+import logo from "@/public/logo.png";
 
 export default function RegisterPage() {
-  const [name, setName] = useState("")
-  const [email, setEmail] = useState("")
-  const [password, setPassword] = useState("")
-  const [confirmPassword, setConfirmPassword] = useState("")
-  const [showPassword, setShowPassword] = useState(false)
-  const [showConfirmPassword, setShowConfirmPassword] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
-  const [error, setError] = useState("")
-  const router = useRouter()
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
+  const [registerUMKM, setRegisterUMKM] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
+  const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+  const [error, setError] = useState("");
+  const router = useRouter();
 
   const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setError("")
+    e.preventDefault();
+    setError("");
+
+    // VALIDASI USERNAME & PASSWORD
+    if (!name || !email || !password || !confirmPassword) {
+      setError("Semua field harus diisi");
+      return;
+    }
 
     if (password !== confirmPassword) {
-      setError("Password tidak cocok")
-      return
+      setError("Password tidak cocok");
+      return;
     }
 
     if (password.length < 6) {
-      setError("Password minimal 6 karakter")
-      return
+      setError("Password minimal 6 karakter");
+      return;
     }
 
-    setIsLoading(true)
+    setIsLoading(true);
 
     try {
-
-      router.push("/")
+      // PILIH REDIRECT
+      if (registerUMKM) {
+        router.push("/affiliasi/form");
+      } else {
+        router.push("/login");
+      }
     } catch (err) {
-      setError("Terjadi kesalahan, silakan coba lagi")
+      setError("Terjadi kesalahan, silakan coba lagi");
     } finally {
-      setIsLoading(false)
+      setIsLoading(false);
     }
-  }
+  };
 
   return (
-    <div className="min-h-screen flex flex-col">
-      <main className="flex-1 bg-linear-to-br from-[#f3e9dd] to-white py-12 px-4">
-        <div className="max-w-md mx-auto">
-          <div className="bg-white rounded-2xl shadow-lg p-8">
-            <div className="text-center mb-8">
-              <div className="flex justify-center items-center mb-3 mt-4">
+    <main className="min-h-screen flex">
+      {/* ================= LEFT PANEL ================= */}
+      <section className="w-full md:w-3/8 bg-white rounded-r-[70px] p-10 md:p-16 flex flex-col justify-center">
+        <h1 className="text-3xl font-bold mb-6">Daftar</h1>
 
-                <Image src={logo} alt="Marketeers Logo" width={45} height={45}/>
-              </div>
-              <h1 className="text-3xl font-bold text-[#1F2937] mb-2">Buat Akun Baru</h1>
-              <p className="text-gray-600">Bergabung dengan Nearby sekarang</p>
+        {/* Error box */}
+        {error && (
+          <div className="mb-4 p-3 bg-red-100 border border-red-300 text-red-700 rounded-lg">
+            {error}
+          </div>
+        )}
+
+        {/* FORM */}
+        <form className="space-y-6" onSubmit={handleSubmit}>
+
+          {/* Email */}
+          <div>
+            <label className="block text-sm mb-2">Email</label>
+            <div className="flex items-center border-b border-black/50 pb-2">
+              <Mail size={18} className="mr-2 text-gray-500" />
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                className="w-full outline-none"
+                placeholder="email@example.com"
+              />
             </div>
+          </div>
 
-            {error && (
-              <div className="mb-6 p-4 bg-red-50 border border-red-200 rounded-lg text-red-600 text-sm">{error}</div>
-            )}
+          {/* Username */}
+          <div>
+            <label className="block text-sm mb-2">Username</label>
+            <div className="flex items-center border-b border-black/50 pb-2">
+              <User size={18} className="mr-2 text-gray-500" />
+              <input
+                type="text"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                className="w-full outline-none"
+                placeholder="username"
+              />
+            </div>
+          </div>
 
-            <form onSubmit={handleSubmit} className="space-y-5">
-              <div>
-                <label htmlFor="name" className="block text-sm font-medium text-[#1F2937] mb-2">
-                  Nama Lengkap
-                </label>
-                <div className="relative">
-                  <UserIcon className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-                  <input
-                    id="name"
-                    type="text"
-                    value={name}
-                    onChange={(e) => setName(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3a5a40] focus:border-transparent outline-none transition-all"
-                    placeholder="Your Name"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="email" className="block text-sm font-medium text-[#1F2937] mb-2">
-                  Email
-                </label>
-                <div className="relative">
-                  <Mail className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-                  <input
-                    id="email"
-                    type="email"
-                    value={email}
-                    onChange={(e) => setEmail(e.target.value)}
-                    className="w-full pl-10 pr-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3a5a40] focus:border-transparent outline-none transition-all"
-                    placeholder="nama@email.com"
-                    required
-                  />
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="password" className="block text-sm font-medium text-[#1F2937] mb-2">
-                  Password
-                </label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-                  <input
-                    id="password"
-                    type={showPassword ? "text" : "password"}
-                    value={password}
-                    onChange={(e) => setPassword(e.target.value)}
-                    className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3a5a40] focus:border-transparent outline-none transition-all"
-                    placeholder="......"
-                    required
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowPassword(!showPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                  >
-                    {showPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-                  </button>
-                </div>
-              </div>
-
-              <div>
-                <label htmlFor="confirmPassword" className="block text-sm font-medium text-[#1F2937] mb-2">
-                  Konfirmasi Password
-                </label>
-                <div className="relative">
-                  <Lock className="absolute left-3 top-1/2 -translate-y-1/2 text-gray-400" size={20} />
-                  <input
-                    id="confirmPassword"
-                    type={showConfirmPassword ? "text" : "password"}
-                    value={confirmPassword}
-                    onChange={(e) => setConfirmPassword(e.target.value)}
-                    className="w-full pl-10 pr-12 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-[#3a5a40] focus:border-transparent outline-none transition-all"
-                    placeholder="......"
-                    required
-                  />
-                  <button
-                    type="button"
-                    onClick={() => setShowConfirmPassword(!showConfirmPassword)}
-                    className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-gray-600"
-                  >
-                    {showConfirmPassword ? <EyeOff size={20} /> : <Eye size={20} />}
-                  </button>
-                </div>
-              </div>
-
-              <div className="flex items-start gap-2">
-                <input
-                  type="checkbox"
-                  id="terms"
-                  className="mt-1 rounded border-gray-300 text-[#3a5a40] focus:ring-[#3a5a40]"
-                  required
-                />
-                <label htmlFor="terms" className="text-sm text-gray-600">
-                  Saya setuju dengan{" "}
-                  <Link href="#" className="text-[#3a5a40] hover:underline font-medium">
-                    Syarat & Ketentuan
-                  </Link>{" "}
-                  dan{" "}
-                  <Link href="#" className="text-[#3a5a40] hover:underline font-medium">
-                    Kebijakan Privasi
-                  </Link>
-                </label>
-              </div>
-
+          {/* Password */}
+          <div>
+            <label className="block text-sm mb-2">Password</label>
+            <div className="flex items-center border-b border-black/50 pb-2">
+              <Lock size={18} className="mr-2 text-gray-500" />
+              <input
+                type={showPassword ? "text" : "password"}
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+                className="w-full outline-none"
+                placeholder="••••••"
+              />
               <button
-                type="submit"
-                disabled={isLoading}
-                className="w-full py-3 bg-[#3a5a40] text-white rounded-lg hover:bg-[#2d4630] transition-colors font-medium disabled:opacity-50 disabled:cursor-not-allowed"
+                type="button"
+                onClick={() => setShowPassword(!showPassword)}
+                className="ml-2 text-gray-500"
               >
-                {isLoading ? "Memproses..." : "Daftar"}
+                {showPassword ? <EyeOff size={18} /> : <Eye size={18} />}
               </button>
-            </form>
+            </div>
+          </div>
 
-            <div className="mt-6 text-center">
-              <p className="text-gray-600">
-                Sudah punya akun?{" "}
-                <Link href="/login" className="text-[#3a5a40] hover:text-[#2d4630] font-medium">
-                  Masuk
-                </Link>
+          {/* Confirm Password */}
+          <div>
+            <label className="block text-sm mb-2">Konfirmasi Password</label>
+            <div className="flex items-center border-b border-black/50 pb-2">
+              <Lock size={18} className="mr-2 text-gray-500" />
+              <input
+                type={showConfirmPassword ? "text" : "password"}
+                value={confirmPassword}
+                onChange={(e) => setConfirmPassword(e.target.value)}
+                className="w-full outline-none"
+                placeholder="••••••"
+              />
+              <button
+                type="button"
+                onClick={() => setShowConfirmPassword(!showConfirmPassword)}
+                className="ml-2 text-gray-500"
+              >
+                {showConfirmPassword ? <EyeOff size={18} /> : <Eye size={18} />}
+              </button>
+            </div>
+          </div>
+
+          {/* UMKM Checkbox */}
+          <div className="bg-green-100 border border-green-300 rounded-xl p-4 flex gap-3">
+            <input
+              type="checkbox"
+              checked={registerUMKM}
+              onChange={() => setRegisterUMKM(!registerUMKM)}
+              className="w-5 h-5"
+            />
+            <div>
+              <p className="font-medium text-sm">
+                Anda mendaftar untuk mempromosikan usaha anda.
+              </p>
+              <p className="text-xs text-gray-600">
+                Centang checkbox ini agar diarahkan untuk mendaftar UMKM
               </p>
             </div>
           </div>
+
+          {/* Terms */}
+          <label className="flex items-center gap-2 text-sm">
+            <input type="checkbox" className="w-4 h-4" required />
+            Saya setuju dengan syarat ketentuan & kebijakan privasi
+          </label>
+
+          {/* Submit */}
+          <button
+            type="submit"
+            disabled={isLoading}
+            className="w-full py-3 bg-linear-to-r from-green-700 to-green-400 text-white rounded-lg font-semibold text-lg disabled:opacity-50"
+          >
+            {isLoading ? "Memproses..." : "Submit"}
+          </button>
+        </form>
+
+        <div className="font-medium mt-10">
+          <span>Sudah memiliki Akun? 
+            <Link href="/login" className="tewxt-green-400">
+              <i className="text-green-600 ml-1 hover:underline">Masuk disini</i>
+            </Link></span>
         </div>
-      </main>
-    </div>
-  )
+      </section>
+
+      {/* RIGHT PANEL */}
+      <section className="hidden md:block w-5/8 bg-linear-to-br from-green-400 to-green-800  sticky top-0 h-screen">
+        <div className="absolute bottom-0 right-0">
+          <Image
+            src="/Logo_Daftar.png"
+            alt="Register Illustration"
+            width={400}
+            height={400}
+            priority
+          />
+        </div>
+      </section>
+    </main>
+  );
 }

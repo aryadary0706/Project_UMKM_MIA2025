@@ -1,60 +1,101 @@
 "use client"
 
 import Link from "next/link"
-import { Menu, X, LogIn, Store } from "lucide-react"
+import { Menu, X } from "lucide-react"
 import { useState } from "react"
 import { motion, AnimatePresence } from "motion/react"
 import Image from "next/image";
 import logo from "@/public/logo.png"
-import { Button } from "../ui/button"
+import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
+import { Briefcase, LogOut } from "lucide-react"
+import { useUserStore } from "@/lib/User";
+import { Button } from "../ui/button";
+import { useEffect } from "react"
 
 export function Header() {
+  const user = useUserStore((state) => state.user)
   const [isOpen, setIsOpen] = useState(false)
-  const [isProfile, setIsProfile] = useState(false)
+  const [isPopup, setIsPopup] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-sm border-b-2">
       <div className="max-w-8xl mx-auto px-4 sm:px-6 lg:px-10 py-1">
         <div className="flex justify-between items-center h-16">
           {/* Desktop Menu */}
-          <div className="hidden md:flex items-center gap-8">
+          <div className="flex items-center gap-8">
             {/* Logo */}
-            <Link href="/" className="flex items-center gap-2">
+            <Link href="/" className="flex items-end gap-1">
               <Image src={logo} alt="Nearby Logo" width={35} height={35}/>
             </Link>
-            <div className="gap-4 mx-0 text-lg flex font-semibold items-center h-6">
-              <Link href="/" className="font-medium hover:underline transition">
-                Beranda
+
+            {/* Destkop Navigation */}
+            <div className="hidden md:flex gap-3 text-md font-semibold items-center h-6">
+              <Link href="/" className="font-semibold hover:underline transition">
+                Home
               </Link>
-              <Link href="#kategori" className="font-medium  hover:underline transition">
-                Kategori
+              <Link href="#kategori" className="font-semibold  hover:underline transition">
+                Search
               </Link>
-              <Link href="#kontak" className="font-medium  hover:underline transition">
-                Tentang Kami
-              </Link>
-              <div className="h-full w-px bg-gray-300 mx-2" />
-              <Link href="/Afiliasi" className="font-medium text-red-500">
-                Afiliasi
-              </Link>
-              <Link href="/Profil" className="font-medium text-red-500">
-                Profil
+              <Link href="#footer" className="font-semibold  hover:underline transition">
+                About Us
               </Link>
             </div>
           </div>
 
-          {/* CTA Button */}
-          <div className="hidden md:block">
-            <Link href="/login">
-              <Button variant="outline" className=" flex flex-row gap-4 px-4 py-2 rounded-lg transition font-medium items-center shadow-md">
-                <LogIn className="w-6 h-6"/>Login
-              </Button>
-            </Link>
-          </div>
+          {/* Profil (Username & Avatar) */}
+          <div className="flex flex-wrap items-center gap-2">
+            {user ? (
+              <div className="flex flex-wrap items-center gap-2">
+                <div className="hidden md:flex items-center gap-2">
+                  <h1 className="font-bold text-gray-800 mr-2">{user.username}</h1>
+                  <button onClick={() => setIsPopup(!isPopup)} className="focus:outline-none">
+                    <Avatar>
+                      <AvatarImage
+                        src="https://github.com/shadcn.png"
+                        alt="User Avatar"
+                        className="w-9 h-9 rounded-full"
+                      />
+                      <AvatarFallback>BR</AvatarFallback>
+                    </Avatar>
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <Link href="/login">
+                <Button variant="outline">Login</Button>
+              </Link>
+            )}
 
-          {/* Icon hidden : md */}
-          <Link href="/" className="md:hidden flex items-center gap-2">
-            <Image src={logo} alt="Marketeers Logo" width={35} height={35} priority/>
-          </Link>
+            <AnimatePresence>
+              {isPopup && (
+                <motion.div
+                  key="avatar-popup"
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  exit={{ opacity: 0, scale: 0.95 }}
+                  transition={{ duration: 0.15 }}
+                  className="hidden md:flex  flex-col absolute right-10 top-full mt-2 w-32 bg-white rounded-lg shadow-xl overflow-hidden z-50"
+                >
+                  <Link href="/affiliasi" onClick={()=> setIsPopup(false)} className="flex items-center p-3 hover:bg-gray-100 transition">
+                    <Briefcase size={20} className="mr-3 text-black" />
+                    <span className="text-sm font-semibold text-black">Afiliasi</span>
+                  </Link>
+                  <Link href="/login" onClick={()=> setIsPopup(false)} className="flex items-center p-3 hover:bg-gray-100 transition">
+                    <LogOut size={20} className="mr-3 text-red-500" />
+                    <span className="text-sm font-semibold text-red-500">Logout</span>
+                  </Link>
+                </motion.div>
+              )}
+            </AnimatePresence>
+          </div>        
 
           {/* Mobile Menu Button */}
           <button className="md:hidden" onClick={() => setIsOpen(!isOpen)}>
@@ -76,24 +117,19 @@ export function Header() {
               <div className="flex flex-col gap-2 mt-2">
                 <div className="h-px w-full bg-gray-300"/>
                 <Link href="/" className="font-medium hover:underline transition">
-                  Beranda
+                  Home
                 </Link>
-                <Link href="#kategori" className="font-medium  hover:underline transition">
-                  Kategori
+                <Link href="#Search" className="font-medium  hover:underline transition">
+                  Search
                 </Link>
-                <Link href="#kontak" className="font-medium  hover:underline transition">
-                  Tentang Kami
+                <Link href="#footer" className="font-medium  hover:underline transition">
+                  About Us
                 </Link>
-                <Link href="/Afiliasi" className="font-medium text-red-500">
-                  Afiliasi
+                <Link href="/affiliasi" className="font-medium  hover:underline transition">
+                  Affiliasi
                 </Link>
-                <Link href="/Profil" className="font-medium text-red-500">
-                  Profil
-                </Link>
-                <Link href="/login">
-                  <Button variant="outline" className="w-full flex flex-row justify-center gap-3 mt-4 px-4 py-2 rounded-md transition font-medium">
-                    <LogIn className="w-6 h-6"/>Login
-                  </Button>
+                <Link href="/login" className="font-medium  hover:underline transition">
+                  Logout
                 </Link>
               </div>
             </motion.div>

@@ -7,7 +7,7 @@ export default function Loading() {
     <div className="flex flex-col items-center justify-center min-h-screen bg-[#F9F5F0]">
       <LoadingSpinner/>
       <p className="mt-4 text-lg font-medium text-gray-700">
-        Memuat data UMKM...
+        Mempersiapkan form registrasi...
       </p>
     </div>
   );

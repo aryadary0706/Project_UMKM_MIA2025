@@ -6,7 +6,7 @@ export function Footer() {
   return (
     <footer className="bg-gray-800 text-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-8">
+        <div className="grid grid-cols-4 gap-8 mb-8">
           {/* Brand */}
           <div>
             <div className="flex items-center gap-2 mb-4">
@@ -18,7 +18,7 @@ export function Footer() {
                   height={50}
                 />
               </div>
-              <span className="font-bold text-lg">Nearby</span>
+              <span className="font-bold text-sm md:text-lg">Nearby</span>
             </div>
             <p className="text-gray-300 text-sm">Temukan UMKM Terbaik di Sekitarmu</p>
           </div>
