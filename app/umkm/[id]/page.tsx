@@ -6,10 +6,12 @@ import { ImageCarousel } from "@/components/appcomponent/image-carousel";
 import { ShopGrid } from "@/components/appcomponent/shop-grid";
 import { MapPin, Phone, Clock, Star, ChevronLeft } from "lucide-react";
 import { UMKM } from "@/lib/UMKMs";
+import { useState } from "react";
 import { useParams } from "next/navigation";
 import Link from "next/link";
 import mockumkms from "@/data/mockShops.json";
 import { Button } from "@/components/ui/button";
+import { getCategoryColor } from "@/components/appcomponent/category-colors";
 
 export default function UMKMDetailPage() {
 	const params = useParams();
@@ -20,6 +22,15 @@ export default function UMKMDetailPage() {
 
 	const coords = selectedUMKM?.coordinates;
 	const whatsapp = selectedUMKM?.whatsapp;
+
+	const [rating, setRating] = useState<number | null>(null);
+
+	const handleSendRating = () => {
+		if (!rating) return;
+		// placeholder: replace with API call if needed
+		alert(`Terima kasih! Anda memberi rating ${rating}`);
+		setRating(null);
+	};
 
 	// Use public environment variable for Maps API key when provided.
 	// If no key is set (e.g. during local dev without a key), fall back to a plain maps.google.com embed that doesn't require the Maps Embed API key.
@@ -43,6 +54,10 @@ export default function UMKMDetailPage() {
 			</div>
 		);
 	}
+
+	const { bg: categoryBg, text: categoryText } = getCategoryColor(
+		selectedUMKM.category
+	);
 	return (
 		<div className="min-h-screen bg-background">
 			<Header />
@@ -51,7 +66,7 @@ export default function UMKMDetailPage() {
 				{/* Back Button */}
 				<Link href="/">
 					<Button variant="outline">
-						<ChevronLeft/> Kembali 
+						<ChevronLeft /> Kembali
 					</Button>
 				</Link>
 
@@ -63,13 +78,24 @@ export default function UMKMDetailPage() {
 								{selectedUMKM.name}
 							</h1>
 							<div className="flex items-center gap-4 flex-wrap">
-								<span className="bg-primary-light text-primary px-4 py-1 rounded-full font-semibold">
-									{selectedUMKM.category}, {selectedUMKM.region}
+								<span
+									className={`px-4 py-1 rounded-full font-semibold ${categoryBg} ${categoryText}`}
+								>
+									{selectedUMKM.category}
+								</span>
+								<span
+									className={`ml-3 px-4 py-1 rounded-full font-semibold bg-white/90 text-gray-900 flex items-center gap-2 text-[16px]`}
+								>
+									<MapPin
+										size={12}
+										className="text-red-500"
+									/>
+									{selectedUMKM.region}
 								</span>
 								<div className="flex items-center gap-1">
 									<Star
 										size={18}
-										className="text-accent fill-accent"
+										className="text-yellow-500 fill-yellow-500"
 									/>
 									<span className="font-bold">
 										{selectedUMKM.Rating}
@@ -114,18 +140,18 @@ export default function UMKMDetailPage() {
 								Lokasi
 							</h2>
 							<div className="w-full h-80 bg-gray-200 rounded-lg overflow-hidden">
-												{coords ? (
-													<iframe
-														width="100%"
-														height="100%"
-														frameBorder="0"
-														src={mapSrc}
-														allowFullScreen
-														loading="lazy"
-														referrerPolicy="no-referrer-when-downgrade"
-														className="w-full h-full"
-													/>
-												) : (
+								{coords ? (
+									<iframe
+										width="100%"
+										height="100%"
+										frameBorder="0"
+										src={mapSrc}
+										allowFullScreen
+										loading="lazy"
+										referrerPolicy="no-referrer-when-downgrade"
+										className="w-full h-full"
+									/>
+								) : (
 									<div className="w-full h-full flex items-center justify-center text-text-light">
 										Lokasi tidak tersedia
 									</div>
@@ -207,6 +233,41 @@ export default function UMKMDetailPage() {
 							</p>
 						</div>
 
+						{/* Rating */}
+						<div className="bg-white p-6 rounded-xl border border-border">
+							<h3 className="font-bold text-lg text-text mb-4">
+								Kasih Rating
+							</h3>
+							<div className="flex items-center gap-6 mb-4">
+								{[1, 2, 3, 4, 5].map((n) => (
+									<button
+										key={n}
+										type="button"
+										aria-label={`Rating ${n}`}
+										onClick={() => setRating(n)}
+										className={
+											`w-12 h-12 rounded-full flex items-center justify-center text-white font-bold transition-shadow ${
+												rating === n
+													? "ring-4 ring-yellow-300"
+													: ""
+											} ` + "bg-[#3d2917]"
+										}
+									>
+										{n}
+									</button>
+								))}
+							</div>
+							<div>
+								<button
+									type="button"
+									onClick={handleSendRating}
+									className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-[#e6a84a] text-white font-semibold shadow-sm hover:brightness-95 transition"
+								>
+									Send
+								</button>
+							</div>
+						</div>
+
 						{/* Info Box */}
 						<div className="bg-primary-light p-6 rounded-xl">
 							<p className="text-sm text-text">
@@ -221,7 +282,7 @@ export default function UMKMDetailPage() {
 				{/* Related UMKM */}
 				<section className="border-t border-border pt-12">
 					<ShopGrid
-						umkms={mockumkms.slice(0,3)}
+						umkms={mockumkms.slice(0, 3)}
 						title="UMKM Serupa di Sekitar Anda"
 					/>
 				</section>
