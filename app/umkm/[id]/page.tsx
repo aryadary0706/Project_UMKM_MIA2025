@@ -62,7 +62,7 @@ export default function UMKMDetailPage() {
 		<div className="min-h-screen bg-background">
 			<Header />
 
-			<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+			<main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12 mb-4">
 				{/* Back Button */}
 				<Link href="/">
 					<Button variant="outline">
@@ -71,7 +71,7 @@ export default function UMKMDetailPage() {
 				</Link>
 
 				{/* Header */}
-				<div className="mb-8">
+				<div className="my-8">
 					<div className="flex flex-col md:flex-row md:items-start md:justify-between gap-4 mb-4">
 						<div>
 							<h1 className="text-4xl font-bold text-text mb-2">
@@ -104,7 +104,7 @@ export default function UMKMDetailPage() {
 							</div>
 						</div>
 						{selectedUMKM.promo && (
-							<div className="bg-accent text-white px-6 py-3 rounded-lg font-bold text-lg">
+							<div className="hidden md:flex bg-yellow-800 text-white p-3 rounded-2xl font-bold text-md">
 								🔥 {selectedUMKM.promo}
 							</div>
 						)}
@@ -123,14 +123,6 @@ export default function UMKMDetailPage() {
 				<div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-12">
 					{/* Main Content */}
 					<div className="lg:col-span-2 space-y-8">
-						{/* Promo */}
-						{selectedUMKM.promo && (
-							<div>
-								<p className="text-3xl text-bold text-yellow-900 leading-relaxed">
-									🔥{selectedUMKM.promo}🔥
-								</p>
-							</div>
-						)}
 
 						{/* Description */}
 						<div>
