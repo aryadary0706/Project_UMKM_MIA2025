@@ -71,14 +71,14 @@ export default function FormAffiliate() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.category || !formData.description || !formData.address || !formData.region || !formData.phone || !formData.email || !formData.whatsapp || !formData.hours || formData.operationalDays.length === 0 ) {
+    if (!formData.name || !formData.category || formData.address) {
       alert("Mohon lengkapi semua field yang diperlukan.");
       return;
     }
 
     const newUMKM = {
       id: 0,
-      name: formData.name,
+      name: formData.name || "Warteg Barokah",
       category: formData.category,
       description: formData.description,
       address: formData.address,
@@ -117,7 +117,7 @@ export default function FormAffiliate() {
         <form onSubmit={handleSubmit}>
           <BusinessIdentity
             formData={{
-              name: formData.name || "Warteg Barokah",
+              name: formData.name,
               phone: formData.phone,
               email: formData.email,
               whatsapp: formData.whatsapp,

@@ -57,7 +57,7 @@ export function FilterSections() {
 	}, [setUMKMs]);
 
 	return (
-		<section className="w-full pb-12 space-y-10">
+		<section className="w-full pb-12 space-y-10 pt-22">
 			{/* Title Section */}
 			<div className="text-center space-y-2 px-4">
 				<h2 className="text-2xl md:text-3xl font-bold text-gray-900">
@@ -133,7 +133,7 @@ export function FilterSections() {
 						className={`flex items-center gap-1 ${
 							isPromo
 								? "bg-green-600 text-white hover:bg-green-700"
-								: " bg-white text-yellow-600 border-yellow-400 hover:bg-yellow-50"
+								: " bg-white text-green-600 border-green-400 hover:bg-green-50"
 						}`}
 					>
 						Sedang Promo
