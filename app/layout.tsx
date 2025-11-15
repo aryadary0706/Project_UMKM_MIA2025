@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { Roboto, Roboto_Mono } from "next/font/google";
+import { Toaster } from "sonner";
 import "./globals.css";
 
 const robotoSans = Roboto({
@@ -28,6 +29,7 @@ export default function RootLayout({
         className={`${robotoSans.variable} ${robotoMono.variable} antialiased`}
       >
         {children}
+        <Toaster richColors position="top-center" />
       </body>
     </html>
   );

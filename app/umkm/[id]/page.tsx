@@ -100,7 +100,6 @@ export default function UMKMDetailPage() {
 									<span className="font-bold">
 										{selectedUMKM.Rating}
 									</span>
-									{/* <span className="text-text-light">({selectedUMKM.reviews} ulasan)</span> */}
 								</div>
 							</div>
 						</div>

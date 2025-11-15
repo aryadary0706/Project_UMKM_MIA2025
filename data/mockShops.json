@@ -15,6 +15,7 @@
     "image": "/images/img1-3.webp",
     "Rating": 4.9,
     "isNew": true,
+    "promo": "Promo Besar Makan Sepuasnya",
     "hours": "08:00 - 20:00",
     "gallery": [
       "/images/img1-1.webp",

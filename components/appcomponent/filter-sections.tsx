@@ -34,9 +34,9 @@ const locations = [
 	{ value: "buahbatu", label: "Buahbatu" },
 	{ value: "bandung kidul", label: "Bandung Kidul" },
 	{ value: "batununggal", label: "Batununggal" },
-	{ value: "Kkaracondong", label: "Kiaracondong" },
+	{ value: "kiaracondong", label: "v" },
 	{ value: "lengkong", label: "Lengkong" },
-	{ value: "cicendo", label: "Cicendo" },
+	{ value: "cicendo", label: "v" },
 ];
 
 export function FilterSections() {
