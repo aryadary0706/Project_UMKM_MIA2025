@@ -4,6 +4,7 @@
 import React from 'react';
 import { Button } from '@/components/ui/button';
 import { toast } from 'sonner';
+import { REGIONS } from '@/data/region';
 
 interface AddressProps {
   formData: {
@@ -32,19 +33,16 @@ export const Address: React.FC<AddressProps> = ({ formData, onChange }) => {
             onChange={(e) => onChange('region', e.target.value)}
             className="w-full px-4 py-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8B6F47] appearance-none bg-white"
           >
-            <option value="">Pilih Region</option>
-            <option value="jakarta">Jakarta</option>
-            <option value="bandung">Bandung</option>
-            <option value="surabaya">Surabaya</option>
-            <option value="yogyakarta">Yogyakarta</option>
-            <option value="bali">Bali</option>
-            <option value="medan">Medan</option>
-            <option value="makassar">Makassar</option>
+            {REGIONS.map((region) => (
+              <option key={region.value} value={region.value}>
+                {region.label}
+              </option>
+            ))}
           </select>
         </div>
 
         <div>
-          <label className="block text-sm font-semibold mb-2">Address Desc</label>
+          <label className="block text-sm font-semibold mb-2">Address Description</label>
           <textarea
             value={formData.address}
             onChange={(e) => onChange('address', e.target.value)}

@@ -19,7 +19,7 @@ export default function App() {
       </section>
 
       {/* Content Session */}
-      <div id="kategori" className="w-full shadow-lg flex mt-2 rounded-t-[80px] bg-[#F9F5F0] border-2">
+      <div id="kategori" className="w-full shadow-lg flex mt-2 rounded-t-[60px] bg-[#F9F5F0] border-2">
         <FilterSections />
       </div>
 

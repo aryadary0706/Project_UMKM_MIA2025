@@ -11,6 +11,7 @@ import { useUMKMStore } from "@/lib/UMKMs";
 import { useUserStore, User } from "@/lib/User";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
+import { toast } from "sonner";
 
 interface FormData {
   name: string;
@@ -34,16 +35,6 @@ export default function FormAffiliate() {
   const createUMKM = useUMKMStore((state) => state.createUMKM);
   const router = useRouter();
   const setAffiliateStatus = useUserStore((state) => state.setAffiliateStatus);
-
-  const MockUser = useUserStore((state) => state.user);
-
-//   useEffect(() => {
-//   if (!MockUser) return;
-
-//   if (MockUser.is_affiliate) {
-//     router.push("/affiliasi");
-//   }
-// }, [MockUser, router]);
 
 
   const [formData, setFormData] = useState<FormData>({
@@ -80,9 +71,13 @@ export default function FormAffiliate() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    // 📌 Convert FormData → UMKM
+    if (!formData.name || !formData.category || !formData.description || !formData.address || !formData.region || !formData.phone || !formData.email || !formData.whatsapp || !formData.hours || formData.operationalDays.length === 0 ) {
+      alert("Mohon lengkapi semua field yang diperlukan.");
+      return;
+    }
+
     const newUMKM = {
-      id: 0, // akan di-generate otomatis di store
+      id: 0,
       name: formData.name,
       category: formData.category,
       description: formData.description,
@@ -101,7 +96,9 @@ export default function FormAffiliate() {
     createUMKM(newUMKM);
     setAffiliateStatus(true);
 
-    alert("UMKM berhasil ditambahkan!");
+    toast("Form Afiliasi Berhasil Disubmit!", {
+      description: `Selamat ${formData.name} menjadi affiliate kami!`
+    });
     router.push("/affiliasi");
   };
 
@@ -120,7 +117,7 @@ export default function FormAffiliate() {
         <form onSubmit={handleSubmit}>
           <BusinessIdentity
             formData={{
-              name: formData.name,
+              name: formData.name || "Warteg Barokah",
               phone: formData.phone,
               email: formData.email,
               whatsapp: formData.whatsapp,
@@ -157,6 +154,7 @@ export default function FormAffiliate() {
               <Button
                 variant="default"
                 className="bg-white text-gray-700 px-5 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors shadow-lg"
+                onClick ={handleSubmit}
                 >
                 Submit Afiliasi
               </Button>

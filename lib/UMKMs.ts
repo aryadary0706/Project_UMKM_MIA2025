@@ -2,14 +2,6 @@
 import { create } from "zustand";
 import { devtools, persist } from "zustand/middleware";
 
-export enum UMKMCategory {
-
-}
-
-export enum UMKMRegion {
-
-}
-
 export interface UMKM {
     id: number;
     name: string;

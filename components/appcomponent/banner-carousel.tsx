@@ -44,7 +44,7 @@ export default function BannerCarousel() {
   }, [api]); // Efek dipicu saat API tersedia/berubah
 
   return (
-    <div className="w-full max-w-6xl mx-auto py-5">
+    <div className="w-full max-w-6xl mx-auto pt-5 pb-3 mb-4">
       <Carousel
         opts={{ loop: true }}
         setApi = {handleSetApi}
@@ -53,21 +53,21 @@ export default function BannerCarousel() {
         <CarouselContent>
           {/* Slide 1 */}
           <CarouselItem>
-            <div className="flex flex-col items-center w-full p-10">
-              <div className="px-6 flex flex-row gap-6 justify-between w-full">
+            <div className="flex flex-col items-center w-full p-12">
+              <div className="px-6 flex flex-row gap-2 md:gap-6 justify-between w-full">
                 <Image
                   src=".\svg\flea-market-rafiki.svg"
                   alt="fleaMarket"
                   width={440}
                   height={440}
-                  className="w-[260px] md:w-[380px] lg:w-[440px] h-auto"
+                  className="hidden md:block w-[200px] md:w-[380px] lg:w-[440px] h-auto"
                   priority
                 />
-                <div className="flex flex-col items-start text-left gap-4 max-w-[350px] md:max-w-[400px]">
+                <div className="flex flex-col items-start text-left gap-6 max-w-[380px] md:max-w-[400px]">
                   <div className="flex flex-row gap-3 mb-6">
-                    <h1 className="text-yellow-900 font-bold text-xl md:text-4xl">Dekatkan Langkah, Dekatkan Ekonomi</h1>
+                    <h1 className="text-yellow-900 font-bold text-2xl md:text-4xl">Dekatkan Langkah, Dekatkan Ekonomi</h1>
                   </div>
-                  <h2 className="text-gray-900 font-regular text-md md:text-xl">Temukan, promosikan, dan kembangkan usaha lokal dengan sistem yang terstruktur.</h2>
+                  <h2 className="text-gray-900 font-regular text-md md:text-lg">Semua yang kamu butuhkan untuk menemukan dan mengembangkan UMKM lokal, dalam satu aplikasi yang terorganisasi.</h2>
                   <Link href="#kategori">
                     <button className="p-4 mt-9 rounded-xl bg-green-600 text-white border-gray-400 shadow-md">
                       Temukan UMKM
@@ -84,9 +84,9 @@ export default function BannerCarousel() {
               <div className="px-6 flex flex-row gap-6 justify-between w-full">
                 <div className="flex flex-col items-start text-left gap-4 max-w-[350px] md:max-w-[400px]">
                   <div className="flex flex-row gap-3">
-                    <h1 className="text-yellow-900 font-bold text-2xl md:text-4xl mb-4">Daftarkan usaha anda!</h1>
+                    <h1 className="text-yellow-900 font-bold text-2xl md:text-4xl mb-4">Daftarkan usaha anda bersama Nearby!</h1>
                   </div>
-                  <h2 className="text-gray-900 font-regular text-lg md:text-xl">Website ini membantu memasarkan usaha anda dan anda dapat mengelolanya dengan satu aplikasi</h2>
+                  <h2 className="text-gray-900 font-regular text-md md:text-xl">Website ini membantu memasarkan usaha anda dan anda dapat mengelolanya dengan satu aplikasi</h2>
                   <Link href="/affiliasi">
                     <button className="p-4 mt-5 rounded-xl bg-green-600 text-white border-gray-400 shadow-md">
                       Daftar UMKM
@@ -98,7 +98,7 @@ export default function BannerCarousel() {
                   alt="Market Launch"
                   width={200}
                   height={200}
-                  className="w-[260px] md:w-[300px] lg:w-[330px] h-auto"
+                  className="hidden md:block w-[200px] md:w-[300px] lg:w-[330px] h-auto"
                   loading="eager"
                 />
               </div>
@@ -107,10 +107,10 @@ export default function BannerCarousel() {
 
           {/* Slide 3 */}
           <CarouselItem>
-            <div className="flex flex-col items-center justify-center text-center px-6 py-10 text-gray-800">
+            <div className="flex flex-col md:flex-row items-center justify-center text-center p-10 text-gray-800">
 
-              <span className="text-yellow-900 font-bold text-3xl md:text-4xl mb-6">
-                UMKM Pilihan Minggu Ini
+              <span className="text-yellow-900 font-bold text-2xl md:text-4xl md:w-4 pb-3 md:pb-0">
+                UMKM Rating Tertinggi
               </span>
 
               {mostRatedUMKM.map((umkm: any) => (
@@ -120,8 +120,12 @@ export default function BannerCarousel() {
                 >
                   {/* Info UMKM */}
                   <div className="flex flex-col gap-3 items-start text-left">
-                    <h3 className="text-xl font-bold text-gray-900">{umkm.name}</h3>
-                    <p className="text-xs font-medium text-gray-600">{umkm.category}</p>
+                    <h3 className="text-md md:text-xl font-bold text-gray-900">{umkm.name}</h3>
+                    <p className="text-sm font-medium text-gray-600">{umkm.category}</p>
+
+                    <p className="text-black font-light text-xs">
+                      {umkm.description.slice(0, 100)}...
+                    </p>
 
                     <p className="text-yellow-700 font-semibold text-lg">
                       ⭐ {umkm.Rating.toFixed(1)} / 5.0
@@ -139,7 +143,7 @@ export default function BannerCarousel() {
                     </Link>
                   </div>
                   {/* Gambar UMKM */}
-                  <div className="">
+                  <div className="hidden md:block w-32 h-32 md:w-48 md:h-48 lg:w-60 lg:h-60 rounded-2xl overflow-hidden">
                     <Image 
                       src={umkm.image}
                       alt={umkm.name}

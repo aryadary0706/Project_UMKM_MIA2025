@@ -1,6 +1,7 @@
 // components/form/BusinessIdentity.tsx
 import React from 'react';
 import { Upload  } from 'lucide-react';
+import { CATEGORIES } from '@/data/category';
 
 interface BusinessIdentityProps {
   formData: {
@@ -51,12 +52,11 @@ export const BusinessIdentity: React.FC<BusinessIdentityProps> = ({
               onChange={(e) => onChange('category', e.target.value)}
               className="w-full px-4 py-1 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8B6F47] appearance-none bg-white"
             >
-              <option value="">Pilih Kategori</option>
-              <option value="makanan">Makanan</option>
-              <option value="minuman">Minuman</option>
-              <option value="fashion">Fashion</option>
-              <option value="kerajinan">Kerajinan</option>
-              <option value="jasa">Jasa</option>
+              {CATEGORIES.map((category) => (
+                <option key={category.value} value={category.value}>
+                  {category.label}
+                </option>
+              ))}
             </select>
           </div>
 

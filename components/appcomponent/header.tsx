@@ -9,11 +9,21 @@ import logo from "@/public/logo.png"
 import { Avatar, AvatarFallback, AvatarImage } from "@radix-ui/react-avatar"
 import { Briefcase, LogOut } from "lucide-react"
 import { useUserStore } from "@/lib/User";
+import { Button } from "../ui/button";
+import { useEffect } from "react"
 
 export function Header() {
-  const user = useUserStore((state) => state.user)!
+  const user = useUserStore((state) => state.user)
   const [isOpen, setIsOpen] = useState(false)
   const [isPopup, setIsPopup] = useState(false)
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  if (!mounted) return null
+
 
   return (
     <nav className="sticky top-0 z-50 bg-white shadow-sm border-b-2">
@@ -42,15 +52,27 @@ export function Header() {
 
           {/* Profil (Username & Avatar) */}
           <div className="flex flex-wrap items-center gap-2">
-            <div className="hidden md:flex items-center gap-2">
-              <h1 className="font-bold text-gray-800 mr-2">{user.username}</h1>
-              <button onClick={()=>setIsPopup(!isPopup)} className="focus:outline-none">
-                <Avatar>
-                  <AvatarImage src="https://github.com/shadcn.png" alt="User Avatar" className="w-9 h-9 rounded-full" />
-                  <AvatarFallback>BR</AvatarFallback>
-                </Avatar>
-              </button>
-            </div>
+            {user ? (
+              <div className="flex flex-wrap items-center gap-2">
+                <div className="hidden md:flex items-center gap-2">
+                  <h1 className="font-bold text-gray-800 mr-2">{user.username}</h1>
+                  <button onClick={() => setIsPopup(!isPopup)} className="focus:outline-none">
+                    <Avatar>
+                      <AvatarImage
+                        src="https://github.com/shadcn.png"
+                        alt="User Avatar"
+                        className="w-9 h-9 rounded-full"
+                      />
+                      <AvatarFallback>BR</AvatarFallback>
+                    </Avatar>
+                  </button>
+                </div>
+              </div>
+            ) : (
+              <Link href="/login">
+                <Button variant="outline">Login</Button>
+              </Link>
+            )}
 
             <AnimatePresence>
               {isPopup && (
@@ -63,16 +85,13 @@ export function Header() {
                   className="hidden md:flex  flex-col absolute right-10 top-full mt-2 w-32 bg-white rounded-lg shadow-xl overflow-hidden z-50"
                 >
                   <Link href="/affiliasi" onClick={()=> setIsPopup(false)} className="flex items-center p-3 hover:bg-gray-100 transition">
-                  <Briefcase size={20} className="mr-3 text-black" />
-                  <span className="text-sm font-semibold text-black">Afiliasi</span>
+                    <Briefcase size={20} className="mr-3 text-black" />
+                    <span className="text-sm font-semibold text-black">Afiliasi</span>
                   </Link>
-                  <button
-                    onClick={() => { /* Handle Logout Logic di sini */ setIsPopup(false) }}
-                    className="flex items-center w-full p-3 hover:bg-gray-100 transition"
-                  >
-                    <LogOut size={20} className="mr-3 text-black" />
-                    <span className="text-sm font-semibold text-black">Logout</span>
-                  </button>
+                  <Link href="/login" onClick={()=> setIsPopup(false)} className="flex items-center p-3 hover:bg-gray-100 transition">
+                    <LogOut size={20} className="mr-3 text-red-500" />
+                    <span className="text-sm font-semibold text-red-500">Logout</span>
+                  </Link>
                 </motion.div>
               )}
             </AnimatePresence>

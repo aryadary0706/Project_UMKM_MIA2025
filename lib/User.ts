@@ -17,7 +17,7 @@ export const useUserStore = create<UserState>((set) => ({
   // MOCK USER (default)
   user: {
     email: "mock@email.com",
-    username: "mock_user",
+    username: "i am mock user",
     is_affiliate: false,
     owned_umkm_id: null,
   },

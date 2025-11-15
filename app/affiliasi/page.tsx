@@ -102,21 +102,31 @@ export default function FormAffiliate() {
           </div>
         </section>
 
-        {/* --- Navigasi ke halaman toko --- */}
-        <section className="mt-8 bg-white rounded-lg shadow-md p-5 flex flex-col md:flex-row items-center gap-4">
-          <img
-            src={mockStore.image}
-            alt={mockStore.name}
-            className="w-32 h-32 object-cover rounded-lg"
-          />
-          <div className="flex flex-col gap-2">
-            <h3 className="font-bold text-xl">{mockStore.name}</h3>
-            <p className="text-gray-600">{mockStore.description}</p>
-            <Link href={`/umkm/${mockStore.id}`}>
-              <Button variant="default">Kunjungi Halaman Usaha</Button>
-            </Link>
+        <div className="flex flex-col md:flex-row mt-8 gap-4">
+          <div className="bg-white rounded-lg shadow-md p-5 flex flex-col w-full md:w-1/2 items-center gap-4">
+            <h2 className="font-bold text-green-800">Beri Promo</h2>
+            <textarea
+              placeholder="Masukkan deskripsi promo yang ingin diberikan..."
+              rows={4}
+              className="w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-[#8B6F47]"
+            />
+            <Button variant="default" className="w-full">Buat Promo</Button>
           </div>
-        </section>
+          <div className="bg-white rounded-lg shadow-md p-5 flex flex-row items-center w-full md:w-1/2 gap-4">
+            <img
+              src={mockStore.image}
+              alt={mockStore.name}
+              className="hidden md:block w-32 h-32 object-cover rounded-lg"
+              />
+            <div className="flex flex-col gap-2">
+              <h3 className="font-bold text-xl">{mockStore.name}</h3>
+              <p className="text-gray-600">{mockStore.description}</p>
+              <Link href={`/umkm/${mockStore.id}`}>
+                <Button variant="default">Kunjungi Halaman Usaha</Button>
+              </Link>
+            </div>
+          </div>
+        </div>
       </main>
 
       <Footer />
