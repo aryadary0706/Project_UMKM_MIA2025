@@ -117,9 +117,9 @@ export default function RegisterPage() {
 
         <div className="font-medium mt-10">
           <span>
-            Sudah memiliki Akun?
-            <Link href="/login">
-              <i className="text-green-600 ml-1 hover:underline">Masuk disini</i>
+            Belum punya akun?
+            <Link href="/register">
+              <i className="text-green-600 ml-1 hover:underline">Klik disini</i>
             </Link>
           </span>
         </div>
@@ -129,8 +129,8 @@ export default function RegisterPage() {
       <section className="hidden md:flex md:flex-5/8 bg-linear-to-br from-[#00980F] to-[#7DD33B] sticky top-0 h-screen ">
         <div className="absolute bottom-0 right-0">
           <Image
-            src="/logo_login.png"
-            alt="Register Illustration"
+            src="/login.png"
+            alt="login Illustration"
             width={400}
             height={400}
             priority
