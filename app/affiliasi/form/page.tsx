@@ -71,10 +71,11 @@ export default function FormAffiliate() {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
 
-    if (!formData.name || !formData.category || formData.address) {
-      alert("Mohon lengkapi semua field yang diperlukan.");
-      return;
-    }
+    // Validasi sederhana
+    // if (!formData.name || !formData.category || formData.address) {
+    //   alert("Mohon lengkapi semua field yang diperlukan.");
+    //   return;
+    // }
 
     const newUMKM = {
       id: 0,
